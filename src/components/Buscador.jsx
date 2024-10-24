@@ -8,7 +8,7 @@ const Buscador = () => {
         <form action="" className="">
             <input type="text" className="border border-gray-300 p-2 rounded" />
             <input type="date" className="border border-gray-300 p-2 rounded" />
-            <Button text={"Buscar"}/>
+            <Button text={"Buscar"} bgColor="amber-400" textColor="black"/>
         </form>
     </section>
   )
