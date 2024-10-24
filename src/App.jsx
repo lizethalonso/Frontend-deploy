@@ -1,17 +1,20 @@
-import './App.css'
-import Buscador from "./components/Buscador"
-import Categorias from './components/Categorias'
-import Recomendaciones from './components/Recomendaciones'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./layout/Layout.jsx";
+import { routes } from "./utils/routes.js";
+import Home from "./pages/Home.jsx";
 
 function App() {
-
   return (
-    <>
-      <Buscador />
-      <Categorias />
-      <Recomendaciones />
-    </>
-  )
+    <div className="App">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="/" element={<Home />} />
+          </Route>
+        </Routes>
+      </Router>
+    </div>
+  );
 }
 
-export default App
+export default App;
