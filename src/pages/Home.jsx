@@ -5,10 +5,10 @@ import Recomendaciones from '../components/Recomendaciones'
 
 const Home = () => {
   return (
-    <div>
-      <Buscador />
-      <Categorias />
-      <Recomendaciones />
+    <div className="flex flex-col w-full h-screen">
+        <Buscador />
+        <Categorias />
+        <Recomendaciones />
     </div>
   )
 }
