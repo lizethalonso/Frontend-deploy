@@ -8,7 +8,7 @@ const Buscador = () => {
         <form action="" className="flex justify-center gap-4 items-center">
             <input type="text" placeholder="🔎 Busca por cuadro, autor o categoría" className="border border-gray-300 w-80 p-2 rounded" />
             <input type="date" className="border border-gray-300 w-60 p-2 rounded" />
-            <Button />
+            <Button text={"Buscar"} bgColor="amber-400" textColor="black"/>
         </form>
     </section>
   )

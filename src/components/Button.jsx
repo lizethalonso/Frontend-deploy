@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Button = () => {
+const Button = ({text, bgColor, textColor}) => {
   return (
-    <button className="bg-background text-white font-bold py-2 px-4 rounded">
-      Ok
+    <button className={`bg-${bgColor} text-${textColor} border-${textColor} border-2 px-2 py-1 rounded-2xl`}>
+      {text}
     </button>
   )
 }
