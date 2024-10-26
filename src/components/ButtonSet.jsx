@@ -10,6 +10,7 @@ const ButtonSet = ({ buttons }) => {
 						text={button.text}
 						bgColor={button.bgColor}
 						textColor={button.textColor}
+						action={button.action} // Asegúrate de pasar la acción
 					/>
 				))
 			)}
