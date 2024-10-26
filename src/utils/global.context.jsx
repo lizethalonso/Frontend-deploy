@@ -6,7 +6,7 @@ import {
   useReducer,
 } from "react";
 import { reducer } from "../reducers/reducer" 
-import data from "../utils/data.json";
+import data from "./data.json";
 
 
 export const ContextGlobal = createContext(undefined);
@@ -20,16 +20,24 @@ export const ContextProvider = ({ children }) => {
   console.log(state);
   
   /* const url =
-    "http://localhost:8080/obra/listartodos"; url local para conectar con backend*/
-
-    const url = data; //Datos mockeados para iniciar pruebas
-  
-    useEffect(() => {
+    "http://localhost:8080/obra/listartodos"; //url local para conectar con backend
+    
+        useEffect(() => {
     axios(url).then((res) => {
       console.log(res.data);
       dispatch({ type: "GET_ART", payload: res.data });
     });
   }, []);
+
+    */
+
+    const url = data; //Datos mockeados para iniciar pruebas
+    useEffect(() => {
+      dispatch({ type: "GET_ART", payload: url });
+  }, []);
+
+
+
 
 
   return (

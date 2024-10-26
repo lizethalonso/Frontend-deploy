@@ -1,23 +1,16 @@
-import SubHeader from "../components/SubHeader"
-import ProductTable from "../components/ProductTable"
-import data from "../utils/data.json"
-
+import SubHeader from "../components/SubHeader";
+import ProductTable from "../components/ProductTable";
+import ContextProvider from "../utils/global.context";
 
 const Admin = () => {
-  const handleEdit = (id) => {
-    console.log('Edit', id)
-  }
+	return (
+		<div className="min-h-screen pt-8">
+			<SubHeader title={"Panel de Administración"} />
+			<ContextProvider>
+				<ProductTable />
+			</ContextProvider>
+		</div>
+	);
+};
 
-  const handleDelete = (id) => {
-    console.log('Delete', id)
-  }
-
-  return (
-    <div className="min-h-screen pt-20">
-        <SubHeader title={"Panel de Administración"}/>
-        <ProductTable data={data} onEdit={handleEdit} onDelete={handleDelete}/>
-    </div>
-  )
-}
-
-export default Admin
+export default Admin;
