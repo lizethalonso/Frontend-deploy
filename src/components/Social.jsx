@@ -14,7 +14,7 @@ const Social = () => {
 			{icons.map((icon, index) => {
 				const Icon = icon.component;
 				// Aplica "text-sm" solo al icono de X que es mas alto que los demas
-				const iconClass = index === icons.length - 1 ? "text-sm" : "text-lg";
+				const iconClass = index === icons.length - 1 ? "text-md" : "text-xl";
 				return (
 					<a
 						href={icon.url}
