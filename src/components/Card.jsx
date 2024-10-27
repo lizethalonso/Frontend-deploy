@@ -9,7 +9,7 @@ const Card = ({ producto }) => {
           />
         </div>
         <div className="p-4">
-          <h3 className="text-2xl font-semibold text-primary mb-2">{producto.nombre}</h3>
+          <h3 className="text-2xl font-semibold text-primary">{producto.nombre}</h3>
           <p className="text-secondary text-sm mb-4">{producto.descripcion}</p>
           <div className="flex justify-between items-center mb-4">
             <span className="text-lg font-bold text-primary">${producto.precioRenta}</span>

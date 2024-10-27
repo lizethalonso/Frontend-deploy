@@ -21,7 +21,7 @@ const Recomendaciones = () => {
                     Recomendaciones
                 </h2>
                 {productosAleatorios.length > 0 ? (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 mb-12 sm:grid-cols-2 gap-6">
                         <div className="space-y-6">
                             {productosAleatorios.slice(0, 5).map((producto) => (
                                 <Card key={producto.id} producto={producto} />

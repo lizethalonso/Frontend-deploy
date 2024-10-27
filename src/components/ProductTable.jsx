@@ -42,8 +42,8 @@ const ProductTable = ({ onEdit, onDelete }) => {
 	};
 
 	return (
-		<section className="py-20 bg-black h-full">
-			<h3 className="text-center text-white my-6 text-lg font-bold">
+		<section className="py-20 bg-black h-screen flex-col grow">
+			<h3 className="text-center text-white my-6 text-lg font-bold mt-16">
 				Listado de Obras
 			</h3>
 

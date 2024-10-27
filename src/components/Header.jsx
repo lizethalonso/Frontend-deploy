@@ -8,7 +8,7 @@ const Header = () => {
 	};
 
 	return (
-		<div className="flex bg-black justify-between items-center fixed top-0 w-screen h-16 ">
+		<div className="flex bg-background justify-between items-center fixed top-0 w-screen h-24 z-10 p-4">
 			<Logo slogan={true} />
 			<ButtonSet buttons={buttons} />
 		</div>
