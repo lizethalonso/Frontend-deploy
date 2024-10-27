@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./layout/Layout.jsx";
-import ContextProvider from './utils/global.context';
 import Home from "./pages/Home.jsx";
 import Admin from "./pages/Admin.jsx";
 import ContextProvider from "./utils/global.context.jsx";
