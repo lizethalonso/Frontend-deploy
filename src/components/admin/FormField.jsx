@@ -1,36 +1,45 @@
+import { formatLabel} from "../../utils/formatFunctions"; 
+
 const FormField = ({
 	element = "input",
 	name,
+	label,
 	value,
-	edit,
 	onChange,
 	children,
 }) => {
-	const Element =
-		element === "textarea"
-			? "textarea"
-			: element === "select"
-			? "select"
-			: "input";
-
 	return (
-		<label className="font-bold ">
-			{name}:
-			{Element === "select" ? (
+		<label className="font-bold">
+			{formatLabel(label)}:
+			{element === "select" ? (
 				<select
-					name={name.toLowerCase()}
+					name={name}
 					value={value}
-					readOnly={edit}
 					onChange={onChange}
 					className="block w-full mt-1 mb-2 p-2 font-normal border border-gray-300 rounded"
 				>
 					{children}
 				</select>
-			) : (
-				<Element
-					name={name.toLowerCase()}
+			) : element === "textarea" ? (
+				<textarea
+					name={name}
 					value={value}
-					readOnly={edit}
+					onChange={onChange}
+					className="block w-full font-normal mt-1 mb-4 p-2 border border-gray-300 rounded"
+				/>
+			) : element === "date" ? (
+				<input
+					type="date"
+					name={name}
+					value={value}
+					onChange={onChange}
+					className="block w-full font-normal mt-1 mb-4 p-2 border border-gray-300 rounded"
+				/>
+			) : (
+				<input
+					type="text"
+					name={name}
+					value={value}
 					onChange={onChange}
 					className="block w-full font-normal mt-1 mb-4 p-2 border border-gray-300 rounded"
 				/>
