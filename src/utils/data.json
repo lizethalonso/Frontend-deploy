@@ -9,7 +9,7 @@
 		"disponibilidad": true,
 		"tamano": "GRANDE",
 		"tecnicaObra": { "id": 11, "nombre": "Óleo sobre tabla" },
-		"movimientoArtistico": { "id": 11, "nombreMovimiento": "Renacimiento" },
+		"movimientoArtistico": { "id": 11, "nombre": "Renacimiento" },
 		"artista": { "id": 11, "nombre": "El Bosco" }
 	},
 	{
@@ -22,7 +22,7 @@
 		"disponibilidad": false,
 		"tamano": "MEDIANO",
 		"tecnicaObra": { "id": 2, "nombre": "Pintura al oleo" },
-		"movimientoArtistico": { "id": 2, "nombreMovimiento": "Barroco" },
+		"movimientoArtistico": { "id": 2, "nombre": "Barroco" },
 		"artista": { "id": 2, "nombre": "Leonardo Da Vinci" }
 	},
 	{
@@ -35,7 +35,7 @@
 		"disponibilidad": true,
 		"tamano": "GRANDE",
 		"tecnicaObra": { "id": 3, "nombre": "Aquarela" },
-		"movimientoArtistico": { "id": 3, "nombreMovimiento": "Gótico" },
+		"movimientoArtistico": { "id": 3, "nombre": "Gótico" },
 		"artista": { "id": 3, "nombre": "Edvard Munch" }
 	},
 	{
@@ -48,7 +48,7 @@
 		"disponibilidad": false,
 		"tamano": "PEQUEÑO",
 		"tecnicaObra": { "id": 4, "nombre": "Óleo sobre lienzo" },
-		"movimientoArtistico": { "id": 4, "nombreMovimiento": "Surrealismo" },
+		"movimientoArtistico": { "id": 4, "nombre": "Surrealismo" },
 		"artista": { "id": 4, "nombre": "Salvador Dalí" }
 	},
 	{
@@ -61,7 +61,7 @@
 		"disponibilidad": true,
 		"tamano": "GRANDE",
 		"tecnicaObra": { "id": 5, "nombre": "Óleo sobre lienzo" },
-		"movimientoArtistico": { "id": 5, "nombreMovimiento": "Barroco" },
+		"movimientoArtistico": { "id": 5, "nombre": "Barroco" },
 		"artista": { "id": 5, "nombre": "Diego Velázquez" }
 	},
 	{
@@ -76,7 +76,7 @@
 		"tecnicaObra": { "id": 6, "nombre": "Óleo sobre lienzo" },
 		"movimientoArtistico": {
 			"id": 6,
-			"nombreMovimiento": "Postimpresionismo"
+			"nombre": "Postimpresionismo"
 		},
 		"artista": { "id": 6, "nombre": "Vincent Van Gogh" }
 	},
@@ -90,7 +90,7 @@
 		"disponibilidad": false,
 		"tamano": "GRANDE",
 		"tecnicaObra": { "id": 7, "nombre": "Óleo sobre lienzo" },
-		"movimientoArtistico": { "id": 7, "nombreMovimiento": "Cubismo" },
+		"movimientoArtistico": { "id": 7, "nombre": "Cubismo" },
 		"artista": { "id": 7, "nombre": "Pablo Picasso" }
 	},
 	{
@@ -103,7 +103,7 @@
 		"disponibilidad": true,
 		"tamano": "MEDIANO",
 		"tecnicaObra": { "id": 8, "nombre": "Óleo sobre lienzo" },
-		"movimientoArtistico": { "id": 8, "nombreMovimiento": "Fauvismo" },
+		"movimientoArtistico": { "id": 8, "nombre": "Fauvismo" },
 		"artista": { "id": 8, "nombre": "Henri Matisse" }
 	},
 	{
@@ -116,7 +116,7 @@
 		"disponibilidad": false,
 		"tamano": "GRANDE",
 		"tecnicaObra": { "id": 9, "nombre": "Fresco" },
-		"movimientoArtistico": { "id": 9, "nombreMovimiento": "Renacimiento" },
+		"movimientoArtistico": { "id": 9, "nombre": "Renacimiento" },
 		"artista": { "id": 9, "nombre": "Miguel Ángel" }
 	},
 	{
@@ -129,7 +129,7 @@
 		"disponibilidad": true,
 		"tamano": "PEQUEÑO",
 		"tecnicaObra": { "id": 10, "nombre": "Óleo sobre lienzo" },
-		"movimientoArtistico": { "id": 10, "nombreMovimiento": "Barroco" },
+		"movimientoArtistico": { "id": 10, "nombre": "Barroco" },
 		"artista": { "id": 10, "nombre": "Johannes Vermeer" }
 	}
 ]

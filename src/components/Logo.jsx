@@ -1,7 +1,6 @@
-
 import { Link } from "react-router-dom";
 
-const Logo = ({slogan}) => {
+const Logo = ({ slogan }) => {
 	return (
 		<Link to="/">
 			<div className="flex justify-between items-center gap-2">
@@ -14,3 +13,4 @@ const Logo = ({slogan}) => {
 };
 
 export default Logo;
+

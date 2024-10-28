@@ -5,7 +5,7 @@ import Recomendaciones from '../components/Recomendaciones'
 
 const Home = () => {
   return (
-    <div className="flex flex-col w-full pt-20 min-h-screen">
+    <div className="flex flex-col w-full pt-16 min-h-screen">
         <Buscador />
         <Categorias />
         <Recomendaciones />
