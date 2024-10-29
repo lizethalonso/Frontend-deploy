@@ -131,5 +131,26 @@
 		"tecnicaObra": { "id": 10, "nombre": "Óleo sobre lienzo" },
 		"movimientoArtistico": { "id": 10, "nombre": "Barroco" },
 		"artista": { "id": 10, "nombre": "Johannes Vermeer" }
+	},
+	{
+		"id": 12,
+		"nombre": "Una cosa",
+		"fechaCreacion": "1505-01-01",
+		"descripcion": "Una obra maestra de la imaginación y el simbolismo de El Bosco.",
+		"descripcionExtendida": "Esta obra es considerada una de las más importantes del Renacimiento, mostrando un mundo de placeres y pecados.",
+		"precioRenta": 450000,
+		"img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+		"imagenesAdicionales": [
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s"
+		],
+		"disponibilidad": true,
+		"tamano": "GRANDE",
+		"tecnicaObra": { "id": 11, "nombre": "Óleo sobre tabla" },
+		"movimientoArtistico": { "id": 11, "nombre": "Renacimiento" },
+		"artista": { "id": 11, "nombre": "El Bosco" }
 	}
 ]

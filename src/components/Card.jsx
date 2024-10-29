@@ -1,6 +1,23 @@
+import React, { useState } from 'react'
+import Modal from './Modal'
+
 const Card = ({ producto }) => {
-    return (
-      <div className="bg-white bg-opacity-20 rounded-lg overflow-hidden shadow-lg">
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleCardClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  return (
+    <>
+      <div 
+        className="bg-white bg-opacity-20 rounded-lg overflow-hidden shadow-lg hover:cursor-pointer"
+        onClick={handleCardClick}
+      >
         <div className="relative">
           <img 
             className="w-full h-48 object-cover" 
@@ -17,7 +34,7 @@ const Card = ({ producto }) => {
           </div>
           <div className="flex flex-wrap gap-2 mb-4">
             <span className="bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full text-xs">{producto.tecnicaObra.nombre}</span>
-            <span className="bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full text-xs">{producto.movimientoArtistico.nombreMovimiento}</span>
+            <span className="bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-full text-xs">{producto.movimientoArtistico.nombre}</span>
           </div>
         </div>
         <div className="bg-secondary bg-opacity-5 px-4 py-3">
@@ -27,7 +44,11 @@ const Card = ({ producto }) => {
           </div>
         </div>
       </div>
-    );
-  };
-  
-  export default Card;
+      {isModalOpen && (
+        <Modal producto={producto} onClose={handleCloseModal} />
+      )}
+    </>
+  );
+};
+
+export default Card;
