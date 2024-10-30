@@ -6,6 +6,10 @@
 		"descripcion": "Una obra maestra de la imaginación y el simbolismo de El Bosco.",
 		"precioRenta": 450000,
 		"img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+		"imagenesAdicionales": [
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s"
+		],
 		"disponibilidad": true,
 		"tamano": "GRANDE",
 		"tecnicaObra": { "id": 11, "nombre": "Óleo sobre tabla" },
@@ -32,6 +36,13 @@
 		"descripcion": "Aaaaaaaaaaaaa",
 		"precioRenta": 3000,
 		"img": "https://img.lagaceta.com.ar/fotos/notas/2020/05/21/600x857_844839_202005201846220000001.webp",
+		"imagenesAdicionales": [
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s"
+		],
 		"disponibilidad": true,
 		"tamano": "GRANDE",
 		"tecnicaObra": { "id": 3, "nombre": "Aquarela" },
@@ -45,6 +56,13 @@
 		"descripcion": "Obra icónica de Salvador Dalí.",
 		"precioRenta": 50000,
 		"img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0cJSfgyNlZnmW3sotglnpcwjTnzqIHrCa8Q&s",
+		"imagenesAdicionales": [
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s"
+		],
 		"disponibilidad": false,
 		"tamano": "PEQUEÑO",
 		"tecnicaObra": { "id": 4, "nombre": "Óleo sobre lienzo" },
@@ -58,6 +76,13 @@
 		"descripcion": "Una obra compleja con varias interpretaciones.",
 		"precioRenta": 200000,
 		"img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwmPbyoI_SENLXimBIAYPJCKkqfCziCPktrA&s",
+		"imagenesAdicionales": [
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s"
+		],
 		"disponibilidad": true,
 		"tamano": "GRANDE",
 		"tecnicaObra": { "id": 5, "nombre": "Óleo sobre lienzo" },
@@ -71,6 +96,13 @@
 		"descripcion": "Un cuadro nocturno icónico de Van Gogh.",
 		"precioRenta": 120000,
 		"img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/220px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
+		"imagenesAdicionales": [
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s"
+		],
 		"disponibilidad": true,
 		"tamano": "MEDIANO",
 		"tecnicaObra": { "id": 6, "nombre": "Óleo sobre lienzo" },
@@ -87,6 +119,13 @@
 		"descripcion": "Un poderoso mensaje sobre la guerra.",
 		"precioRenta": 700000,
 		"img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Mural_del_Gernika.jpg/495px-Mural_del_Gernika.jpg",
+		"imagenesAdicionales": [
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s"
+		],
 		"disponibilidad": false,
 		"tamano": "GRANDE",
 		"tecnicaObra": { "id": 7, "nombre": "Óleo sobre lienzo" },
@@ -100,6 +139,13 @@
 		"descripcion": "La expresión del movimiento a través del color.",
 		"precioRenta": 30000,
 		"img": "https://cdn.shopify.com/s/files/1/0083/3090/3631/files/Dance_I_-_Henri_Matisse_1909.jpg?v=1564999522",
+		"imagenesAdicionales": [
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s"
+		],
 		"disponibilidad": true,
 		"tamano": "MEDIANO",
 		"tecnicaObra": { "id": 8, "nombre": "Óleo sobre lienzo" },
@@ -113,6 +159,13 @@
 		"descripcion": "Un fresco en la Capilla Sixtina.",
 		"precioRenta": 850000,
 		"img": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg",
+		"imagenesAdicionales": [
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s"
+		],
 		"disponibilidad": false,
 		"tamano": "GRANDE",
 		"tecnicaObra": { "id": 9, "nombre": "Fresco" },
@@ -126,6 +179,13 @@
 		"descripcion": "Misteriosa y cautivadora.",
 		"precioRenta": 60000,
 		"img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Meisje_met_de_parel.jpg/375px-Meisje_met_de_parel.jpg",
+		"imagenesAdicionales": [
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s"
+		],
 		"disponibilidad": true,
 		"tamano": "PEQUEÑO",
 		"tecnicaObra": { "id": 10, "nombre": "Óleo sobre lienzo" },

@@ -1,6 +1,6 @@
 
 import Buscador from '../components/Buscador'
-import Categorias from '../components/Categorias'
+import Categorias from '../components/categorias/Categorias'
 import Recomendaciones from '../components/Recomendaciones'
 
 const Home = () => {

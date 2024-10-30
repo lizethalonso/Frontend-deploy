@@ -1,10 +1,12 @@
 import Button from './Button';
+import { BiSearchAlt } from "react-icons/bi";
+import '../styles/App.css'
 
 const Buscador = () => {
   return (
-    <section className="mx-auto bg-primary p-7 flex-col justify-center items-center text-center w-full">
-        <h1 className="text-3xl font-bold  mb-4 text-white">Busca un cuadro</h1>
-        <form action="" className="flex justify-center gap-4 p-5 items-center">
+    <section className="mx-auto bg-primary p-7 flex-col justify-center items-center text-center w-full search-section">
+        <h1 className="text-2xl mb-4 text-white text-left px-24 pt-6">Busca y alquila tus obras de arte favoritas</h1>
+        <form action="" className="flex justify-left gap-6 p-5 px-24 items-center">
         <div className="relative w-full max-w-md">
             <input
               type="text"
@@ -27,7 +29,7 @@ const Buscador = () => {
             </svg>
           </div>
             <input type="date" className="w-full max-w-[15rem] rounded-lg border border-gray-300 bg-white py-3 px-4 text-gray-700 focus:outline-none" />
-            <Button text={"Buscar"} bgColor="background" textColor="white" />
+            <Button text={<BiSearchAlt />} bgColor="primary" textColor="black" textSize="2xl" widthSize="16" heightSize="12" />
         </form>
     </section>
   )
