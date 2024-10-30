@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { AiOutlineClose, AiFillPicture } from "react-icons/ai";
 
 const Modal = ({ isOpen, onClose, producto }) => {
-  const [showRelated, setShowRelated] = useState(false);
+  const [showRelated, setShowRelated] = useState(true);
+  
   if (!isOpen) return null;
 
   return (
@@ -12,94 +13,76 @@ const Modal = ({ isOpen, onClose, producto }) => {
         onClick={onClose}
       />
       
-      <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white rounded-xl shadow-2xl mx-4">
-        
-        <div className="relative h-96">
-          <button
-            onClick={onClose}
-            className="absolute top-2 right-2 p-2 rounded-full bg-black/60 z-10 hover:bg-black/80 transition-colors"
-          >
-            <AiOutlineClose className="w-6 h-6 text-white" />
-          </button>
+      <div className="relative w-full max-w-6xl max-h-[90vh] overflow-y-auto bg-white rounded-xl shadow-2xl mx-4">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 p-2 rounded-full bg-amber-600 z-10 hover:bg-amber-700 transition-colors"
+        >
+          <AiOutlineClose className="w-6 h-6 text-white" />
+        </button>
 
-          <img
-            src={producto.img}
-            alt={producto.nombre}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60" />
-          <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-            <h2 className="text-3xl font-bold mb-2">{producto.nombre}</h2>
-            <p className="text-lg text-white/90">{producto.artista.nombre}</p>
-          </div>
-        </div>
+        <div className="p-8">
+        <h2 className="text-3xl font-bold mb-2">{producto.nombre}</h2>
+        <p className="text-xl text-gray-600 mb-6">{producto.artista.nombre}</p>
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Imagen Principal y Detalles */}
+            <div className="flex-1">
+              <img
+                src={producto.img}
+                alt={producto.nombre}
+                className="w-full aspect-[5/3] object-cover rounded-lg mb-6"
+              />
 
-        <div className="p-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Detalles de la Obra</h3>
-              <dl className="space-y-2">
-                <div className="flex justify-between">
-                  <dt className="text-gray-600">Precio de Renta</dt>
-                  <dd className="font-semibold text-amber-600">${producto.precioRenta}</dd>
+              <div className="space-y-4 flex flex-col gap-4">
+                <div>
+                  <h3 className="text-lg font-semibold">Fecha de creación:</h3>
+                  <p>{producto.fechaCreacion}</p>
                 </div>
-                <div className="flex justify-between">
-                  <dt className="text-gray-600">Tamaño</dt>
-                  <dd className="font-semibold">{producto.tamano}</dd>
-                </div>
-                <div className="flex justify-between">
-                  <dt className="text-gray-600">Técnica</dt>
-                  <dd className="font-semibold">{producto.tecnicaObra.nombre}</dd>
-                </div>
-                <div className="flex justify-between">
-                  <dt className="text-gray-600">Movimiento</dt>
-                  <dd className="font-semibold">{producto.movimientoArtistico.nombre}</dd>
-                </div>
-                <div className="flex justify-between">
-                  <dt className="text-gray-600">Fecha</dt>
-                  <dd className="font-semibold">{producto.fechaCreacion}</dd>
-                </div>
-              </dl>
-            </div>
-            
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Descripción</h3>
-              <p className="text-gray-600 leading-relaxed">{producto.descripcion}</p>
-            </div>
-          </div>
 
-          <div className="mt-8">
-            <button
-              onClick={() => setShowRelated(!showRelated)}
-              className="w-full py-3 px-4 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-lg font-medium transition-colors"
-            >
-              {showRelated ? 'Ocultar imágenes relacionadas' : 'Ver más'}
-            </button>
+                <div>
+                  <h3 className="text-lg font-semibold">Descripción:</h3>
+                  <p className="text-gray-600">{producto.descripcion}</p>
+                </div>
 
-            {showRelated && (
-              <div className="mt-6">
-                {producto.imagenesAdicionales && producto.imagenesAdicionales.length > 0 && (
-                  <div className="flex overflow-x-auto space-x-2">
-                    {producto.imagenesAdicionales.map((imagen, index) => (
-                      <img
-                        key={index}
-                        src={imagen}
-                        alt={`Imagen adicional ${index + 1}`}
-                        className="w-24 h-24 object-cover rounded-lg"
-                      />
-                    ))}
-                  </div>
-                )}
-                {(!producto.imagenesAdicionales || producto.imagenesAdicionales.length === 0) && (
-                  <div className="flex flex-col items-center justify-center py-12 px-4 bg-gray-50 rounded-lg">
-                    <AiFillPicture className="w-12 h-12 text-gray-400 mb-4" />
-                    <p className="text-gray-600 text-center">
-                      No hay imágenes relacionadas disponibles 😔
-                    </p>
-                  </div>
-                )}
+                <div>
+                  <h3 className="text-lg font-semibold">Movimiento artístico - técnica:</h3>
+                  <p>{producto.movimientoArtistico.nombre} - {producto.tecnicaObra.nombre}</p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold">Dimensiones:</h3>
+                  <p>{producto.tamano}</p>
+                </div>
+
+                <div className="text-center mb-4">
+                  <p className="text-2xl font-bold">${producto.precioRenta} / día</p>
+                </div>
+
+                <button className="w-full py-3 px-4 bg-amber-600 text-white rounded-lg font-medium hover:bg-amber-700 transition-colors">
+                  Alquilar
+                </button>
+
               </div>
-            )}
+            </div>
+
+            {/* Imágenes Adicionales y Precio */}
+            <div className="lg:w-1/3">
+              <div className="sticky top-4">
+                <div className="grid grid-cols-2 gap-2 mb-6">
+                  {producto.imagenesAdicionales?.slice(0, 4).map((imagen, index) => (
+                    <img
+                      key={index}
+                      src={imagen}
+                      alt={`Vista ${index + 1} de ${producto.nombre}`}
+                      className="w-full aspect-square object-cover rounded-lg"
+                    />
+                  ))}
+                </div>
+                <button className="w-full py-3 px-4 bg-amber-600 text-white rounded-lg font-medium hover:bg-amber-700 transition-colors">
+                  Ver más
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
