@@ -7,7 +7,7 @@ const Categorias = () => {
   const categorias = productos.slice(0, 4);
 
   return (
-    <section className="mx-auto px-32 py-12 categories-section w-screen">
+    <section className="mx-auto px-32 py-12 categories-section w-full">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
         {categorias.map((producto) => (
           <CategoryCard key={producto.id} producto={producto} />
