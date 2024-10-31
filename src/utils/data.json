@@ -5,10 +5,16 @@
 		"fechaCreacion": "1505-01-01",
 		"descripcion": "Una obra maestra de la imaginación y el simbolismo de El Bosco.",
 		"precioRenta": 450000,
-		"img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+		"img": "https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730236339/Proyecto/Jardin%20de%20las%20delicias/b3hidxgl0uidaibsikoh.jpg",
 		"imagenesAdicionales": [
 			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s"
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730236339/Proyecto/Jardin%20de%20las%20delicias/kuhjdxgf2dfe1frmqgbe.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730236339/Proyecto/Jardin%20de%20las%20delicias/vvqj16bqf6almkazzgkj.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730236339/Proyecto/Jardin%20de%20las%20delicias/qs4bitovukfskdwj66yt.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730236339/Proyecto/Jardin%20de%20las%20delicias/qor31jvdd3vglyv37ogt.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730236336/Proyecto/Jardin%20de%20las%20delicias/dmgxgtlzfrqck2y74wlx.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730236335/Proyecto/Jardin%20de%20las%20delicias/jhbttn0r5egp2ksn4jgl.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730236335/Proyecto/Jardin%20de%20las%20delicias/qxitllseodlafv5bzcou.jpg"
 		],
 		"disponibilidad": true,
 		"tamano": "GRANDE",
@@ -35,13 +41,12 @@
 		"fechaCreacion": "2000-07-13",
 		"descripcion": "Aaaaaaaaaaaaa",
 		"precioRenta": 3000,
-		"img": "https://img.lagaceta.com.ar/fotos/notas/2020/05/21/600x857_844839_202005201846220000001.webp",
+		"img": "https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730238444/Proyecto/El%20grito/principal.jpg",
 		"imagenesAdicionales": [
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s"
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730238353/Proyecto/El%20grito/rp92igpypvyobljfterg.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730238353/Proyecto/El%20grito/mqfedph7zyndfglnaseu.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730238353/Proyecto/El%20grito/pofgcuyulrnciygzg1pw.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730238354/Proyecto/El%20grito/kzrlclgvfmccc8ceozpv.jpg"
 		],
 		"disponibilidad": true,
 		"tamano": "GRANDE",
@@ -55,13 +60,12 @@
 		"fechaCreacion": "1931-04-15",
 		"descripcion": "Obra icónica de Salvador Dalí.",
 		"precioRenta": 50000,
-		"img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0cJSfgyNlZnmW3sotglnpcwjTnzqIHrCa8Q&s",
+		"img": "https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237429/Proyecto/Persistencia%20de%20la%20memoria/principal.jpg",
 		"imagenesAdicionales": [
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s"
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237400/Proyecto/Persistencia%20de%20la%20memoria/yzuga8o5bms71nddengj.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237399/Proyecto/Persistencia%20de%20la%20memoria/bonoqqqeb4pclty2n4ox.png",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237398/Proyecto/Persistencia%20de%20la%20memoria/hg1omy4xgzvr1vgja9mf.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237397/Proyecto/Persistencia%20de%20la%20memoria/vr7ppn9wb7ioeun2gquz.jpg"
 		],
 		"disponibilidad": false,
 		"tamano": "PEQUEÑO",
@@ -97,11 +101,10 @@
 		"precioRenta": 120000,
 		"img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/220px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
 		"imagenesAdicionales": [
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s"
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730166613/Proyecto/La%20noche%20estrellada/vvoatnuiwpb7dlj0gvey.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730166613/Proyecto/La%20noche%20estrellada/zfvlacfj7g4mp80tsxzk.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730166612/Proyecto/La%20noche%20estrellada/y5opfcptuz6r3kxoxnda.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730166612/Proyecto/La%20noche%20estrellada/ndc60mic9waxahc0htzc.jpg"
 		],
 		"disponibilidad": true,
 		"tamano": "MEDIANO",
@@ -119,13 +122,7 @@
 		"descripcion": "Un poderoso mensaje sobre la guerra.",
 		"precioRenta": 700000,
 		"img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Mural_del_Gernika.jpg/495px-Mural_del_Gernika.jpg",
-		"imagenesAdicionales": [
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s"
-		],
+		"imagenesAdicionales": [],
 		"disponibilidad": false,
 		"tamano": "GRANDE",
 		"tecnicaObra": { "id": 7, "nombre": "Óleo sobre lienzo" },
@@ -178,13 +175,12 @@
 		"fechaCreacion": "1665-01-01",
 		"descripcion": "Misteriosa y cautivadora.",
 		"precioRenta": 60000,
-		"img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Meisje_met_de_parel.jpg/375px-Meisje_met_de_parel.jpg",
+		"img": "https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730236663/Proyecto/La%20joven%20de%20la%20perla/principal.png",
 		"imagenesAdicionales": [
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s"
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730236571/Proyecto/La%20joven%20de%20la%20perla/pfglpfmi6frm77dgcajz.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730236570/Proyecto/La%20joven%20de%20la%20perla/pf6ndtvqdbsanslddr1m.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730236569/Proyecto/La%20joven%20de%20la%20perla/dxtdmwyong47b0qegkmi.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730236568/Proyecto/La%20joven%20de%20la%20perla/xsgsi3qt9nlr6n5pjekr.jpg"
 		],
 		"disponibilidad": true,
 		"tamano": "PEQUEÑO",
@@ -194,23 +190,181 @@
 	},
 	{
 		"id": 12,
-		"nombre": "Una cosa",
-		"fechaCreacion": "1505-01-01",
-		"descripcion": "Una obra maestra de la imaginación y el simbolismo de El Bosco.",
-		"descripcionExtendida": "Esta obra es considerada una de las más importantes del Renacimiento, mostrando un mundo de placeres y pecados.",
+		"nombre": "La gran ola de Kanagawa",
+		"fechaCreacion": "1831-01-01",
+		"descripcion": "Una famosa estampa japonesa y una de las imágenes más reconocibles del arte japonés.",
+		"descripcionExtendida": "Esta obra, creada por el maestro japonés Hokusai, es parte de la serie 'Treinta y seis vistas del monte Fuji' y captura el poder de una ola gigante frente al monte Fuji en el fondo.",
 		"precioRenta": 450000,
-		"img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
+		"img": "https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730236422/Proyecto/La%20gran%20ola%20de%20Kanagawa/principal.png",
 		"imagenesAdicionales": [
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSwIRSCq9CRRU7zx9tk8TrWYdL8ksbPUCWQ&s"
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730166965/Proyecto/La%20gran%20ola%20de%20Kanagawa/l5gncjwavjftmvetnjq0.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730166965/Proyecto/La%20gran%20ola%20de%20Kanagawa/vittqef2ahvlf0h0awbw.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730166965/Proyecto/La%20gran%20ola%20de%20Kanagawa/x63mmrxqsx8udusgsjhh.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730166965/Proyecto/La%20gran%20ola%20de%20Kanagawa/uuha8sxzi5xzbdzfbpco.jpg"
 		],
 		"disponibilidad": true,
 		"tamano": "GRANDE",
-		"tecnicaObra": { "id": 11, "nombre": "Óleo sobre tabla" },
-		"movimientoArtistico": { "id": 11, "nombre": "Renacimiento" },
-		"artista": { "id": 11, "nombre": "El Bosco" }
+		"tecnicaObra": { "id": 11, "nombre": "Xilografía" },
+		"movimientoArtistico": { "id": 11, "nombre": "Ukiyo-e" },
+		"artista": { "id": 11, "nombre": "Katsushika Hokusai" }
+	},
+	{
+		"id": 13,
+		"nombre": "Aníbal vencedor que por primera vez mira",
+		"fechaCreacion": "1812-01-01",
+		"descripcion": "Una obra del romanticismo que representa a Aníbal sobre los Alpes.",
+		"descripcionExtendida": "La obra muestra a Aníbal y su ejército contemplando Italia desde los Alpes, simbolizando tanto la victoria como el sacrificio.",
+		"precioRenta": 370000,
+		"img": "https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237248/Proyecto/An%C3%ADbal%20vencedor%20que%20por%20primera%20vez%20mira%20Italia%20desde%20los%20Alpes/principal.jpg",
+		"imagenesAdicionales": [
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237197/Proyecto/An%C3%ADbal%20vencedor%20que%20por%20primera%20vez%20mira%20Italia%20desde%20los%20Alpes/mla43qpdpzslgegycojd.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237199/Proyecto/An%C3%ADbal%20vencedor%20que%20por%20primera%20vez%20mira%20Italia%20desde%20los%20Alpes/kx87dm3faxxbi1vmlaww.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237199/Proyecto/An%C3%ADbal%20vencedor%20que%20por%20primera%20vez%20mira%20Italia%20desde%20los%20Alpes/bh1dmeql12zm3v1npx1p.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237201/Proyecto/An%C3%ADbal%20vencedor%20que%20por%20primera%20vez%20mira%20Italia%20desde%20los%20Alpes/zfb7vl9uczwt8esnmxbg.jpg"
+		],
+		"disponibilidad": true,
+		"tamano": "GRANDE",
+		"tecnicaObra": { "id": 12, "nombre": "Óleo sobre lienzo" },
+		"movimientoArtistico": { "id": 12, "nombre": "Romanticismo" },
+		"artista": { "id": 12, "nombre": "William Turner" }
+	},
+	{
+		"id": 14,
+		"nombre": "Caminante sobre un mar de nubes",
+		"fechaCreacion": "1818-01-01",
+		"descripcion": "Una de las obras más emblemáticas del Romanticismo.",
+		"descripcionExtendida": "Este cuadro de Friedrich representa a un hombre de pie en la cima de una montaña, contemplando un vasto paisaje de nubes.",
+		"precioRenta": 420000,
+		"img": "https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730238299/Proyecto/Caminante%20sobre%20un%20mar%20de%20nubes/principal.png",
+		"imagenesAdicionales": [
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730238156/Proyecto/Caminante%20sobre%20un%20mar%20de%20nubes/r5rymmcflmkcmabq6suf.png",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730238154/Proyecto/Caminante%20sobre%20un%20mar%20de%20nubes/dfsk8qj2ewd2nu66a74b.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730238153/Proyecto/Caminante%20sobre%20un%20mar%20de%20nubes/tp9qc5xjfcuvabiojxdd.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730238157/Proyecto/Caminante%20sobre%20un%20mar%20de%20nubes/xygd32pjrzt5uc9ykwmh.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730238280/Proyecto/Caminante%20sobre%20un%20mar%20de%20nubes/dlhh1zz72069n8dlnsnp.png"
+		],
+		"disponibilidad": true,
+		"tamano": "MEDIANO",
+		"tecnicaObra": { "id": 13, "nombre": "Óleo sobre lienzo" },
+		"movimientoArtistico": { "id": 13, "nombre": "Romanticismo" },
+		"artista": { "id": 13, "nombre": "Caspar David Friedrich" }
+	},
+	{
+		"id": 15,
+		"nombre": "Composición VIII",
+		"fechaCreacion": "1923-01-01",
+		"descripcion": "Una obra de arte abstracto llena de geometría y color.",
+		"descripcionExtendida": "Kandinsky crea una composición geométrica que juega con formas y colores en esta obra abstracta.",
+		"precioRenta": 500000,
+		"img": "https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730238028/Proyecto/Composicion%20VIII/principal.png",
+		"imagenesAdicionales": [
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237940/Proyecto/Composicion%20VIII/oxuu8hs7cnpts4cpqeyw.png",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237938/Proyecto/Composicion%20VIII/tp5ezjvofaaaitdygoyp.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237937/Proyecto/Composicion%20VIII/jgchqwaxrlrjqei8jaj5.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237935/Proyecto/Composicion%20VIII/ihskvtwspaje6aosy9pz.jpg"
+		],
+		"disponibilidad": true,
+		"tamano": "MEDIANO",
+		"tecnicaObra": { "id": 14, "nombre": "Óleo sobre lienzo" },
+		"movimientoArtistico": { "id": 14, "nombre": "Arte abstracto" },
+		"artista": { "id": 14, "nombre": "Wassily Kandinsky" }
+	},
+	{
+		"id": 16,
+		"nombre": "El nacimiento de Venus",
+		"fechaCreacion": "1485-01-01",
+		"descripcion": "Una de las obras más representativas del Renacimiento italiano.",
+		"descripcionExtendida": "Este cuadro de Botticelli representa el nacimiento de Venus, la diosa romana del amor, emergiendo del mar sobre una concha.",
+		"precioRenta": 750000,
+		"img": "https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730238677/Proyecto/El%20nacimieno%20de%20venus/principal.png",
+		"imagenesAdicionales": [
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730238611/Proyecto/El%20nacimieno%20de%20venus/njtdcifitdrcfc5nijjx.png",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730238611/Proyecto/El%20nacimieno%20de%20venus/nimr92tqnnry1cngpkiw.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730238611/Proyecto/El%20nacimieno%20de%20venus/v6pxxg9zupzavns5lrkw.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730238610/Proyecto/El%20nacimieno%20de%20venus/pihvqcmpdksdtydgbrnu.jpg"
+		],
+		"disponibilidad": true,
+		"tamano": "GRANDE",
+		"tecnicaObra": { "id": 15, "nombre": "Tempera sobre lienzo" },
+		"movimientoArtistico": { "id": 15, "nombre": "Renacimiento" },
+		"artista": { "id": 15, "nombre": "Sandro Botticelli" }
+	},
+	{
+		"id": 17,
+		"nombre": "Girasoles",
+		"fechaCreacion": "1888-01-01",
+		"descripcion": "Una famosa serie de pinturas de girasoles de Vincent van Gogh.",
+		"descripcionExtendida": "Van Gogh pinta girasoles en un florero en varias versiones, resaltando la intensidad del color amarillo.",
+		"precioRenta": 480000,
+		"img": "https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730235590/Proyecto/Girasoles/principal.jpg",
+		"imagenesAdicionales": [
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730235544/Proyecto/Girasoles/nsfssgltartndlyppoj8.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730235544/Proyecto/Girasoles/sgow0lbefbhzxbgwdudq.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730235543/Proyecto/Girasoles/wb8zfx1pgh8q2zjukwpo.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730235543/Proyecto/Girasoles/cbrzczd0z3pdtrisdlml.jpg"
+		],
+		"disponibilidad": true,
+		"tamano": "MEDIANO",
+		"tecnicaObra": { "id": 16, "nombre": "Óleo sobre lienzo" },
+		"movimientoArtistico": { "id": 16, "nombre": "Postimpresionismo" },
+		"artista": { "id": 16, "nombre": "Vincent van Gogh" }
+	},
+	{
+		"id": 18,
+		"nombre": "Mar en calma",
+		"fechaCreacion": "1640-01-01",
+		"descripcion": "Una representación del mar en calma bajo un cielo nublado.",
+		"descripcionExtendida": "La obra de Van de Velde captura la serenidad y la quietud del mar con gran precisión y detalle.",
+		"precioRenta": 340000,
+		"img": "https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237719/Proyecto/Mar%20en%20calma/principal.jpg",
+		"imagenesAdicionales": [
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237673/Proyecto/Mar%20en%20calma/ghc0tcd7tnkuhigz2hpq.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237672/Proyecto/Mar%20en%20calma/go7oaqnmy4qnl6oonkvj.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237671/Proyecto/Mar%20en%20calma/w5upbvumwarej2zj3lmw.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237669/Proyecto/Mar%20en%20calma/b8wifrmnytaxodpmlmgo.jpg"
+		],
+		"disponibilidad": true,
+		"tamano": "GRANDE",
+		"tecnicaObra": { "id": 17, "nombre": "Óleo sobre panel" },
+		"movimientoArtistico": { "id": 17, "nombre": "Barroco" },
+		"artista": { "id": 17, "nombre": "Willem van de Velde" }
+	},
+	{
+		"id": 19,
+		"nombre": "Paul and Barnabas at Lystra",
+		"fechaCreacion": "1699-01-01",
+		"descripcion": "Una escena bíblica que muestra a Pablo y Bernabé en Listra.",
+		"descripcionExtendida": "Este cuadro barroco de Poussin representa a los apóstoles realizando un milagro en la ciudad de Listra.",
+		"precioRenta": 390000,
+		"img": "https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730238553/Proyecto/Paul%20and%20Barnabas%20at%20Lystra/principal.jpg",
+		"imagenesAdicionales": [
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730236979/Proyecto/Paul%20and%20Barnabas%20at%20Lystra/g7rlnp8t4doftnirhxaw.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730236978/Proyecto/Paul%20and%20Barnabas%20at%20Lystra/esspwe5llznsecyvvfhz.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730236977/Proyecto/Paul%20and%20Barnabas%20at%20Lystra/cnqfkbm7xgo3tokrvidg.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730236976/Proyecto/Paul%20and%20Barnabas%20at%20Lystra/z5muaqq5ujp2spt5z7wq.jpg"
+		],
+		"disponibilidad": true,
+		"tamano": "GRANDE",
+		"tecnicaObra": { "id": 18, "nombre": "Óleo sobre lienzo" },
+		"movimientoArtistico": { "id": 18, "nombre": "Barroco" },
+		"artista": { "id": 18, "nombre": "Nicolas Poussin" }
+	},
+	{
+		"id": 20,
+		"nombre": "Salvator Mundi",
+		"fechaCreacion": "1500-01-01",
+		"descripcion": "Una representación de Cristo como el salvador del mundo.",
+		"descripcionExtendida": "Este retrato de Leonardo da Vinci muestra a Cristo sosteniendo una esfera de cristal, simbolizando su dominio sobre el mundo.",
+		"precioRenta": 950000,
+		"img": "https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237833/Proyecto/Salvator%20mundi/principal.jpg",
+		"imagenesAdicionales": [
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237504/Proyecto/Salvator%20mundi/nn9rkaft2hqx1855yy3q.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237506/Proyecto/Salvator%20mundi/nmlz5t3jt0fsg3tfen9b.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237502/Proyecto/Salvator%20mundi/oca1ik5iwtbkwrygt0tw.jpg",
+			"https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730237504/Proyecto/Salvator%20mundi/tvdjpszt0dkupdkq7zts.jpg"
+		],
+		"disponibilidad": true,
+		"tamano": "GRANDE",
+		"tecnicaObra": { "id": 19, "nombre": "Óleo sobre nogal" }
 	}
 ]

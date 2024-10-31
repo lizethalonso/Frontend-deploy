@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { AiOutlineArrowLeft, AiFillPicture } from "react-icons/ai";
 
 const Modal = ({ isOpen, onClose, producto }) => {
-  
+  const [mostrarMas, setMostrarMas] = useState(false);
+
   if (!isOpen) return null;
 
   return (
@@ -67,29 +68,32 @@ const Modal = ({ isOpen, onClose, producto }) => {
 
               {/* Imágenes Adicionales y precio */}
               <div className="lg:w-1/3">
-              <div className="sticky top-4">
-                <div className="grid grid-cols-2 gap-2 mb-6">
-                  {producto.imagenesAdicionales?.length > 0 ? (
-                    producto.imagenesAdicionales.slice(0, 4).map((imagen, index) => (
-                      <img
-                        key={index}
-                        src={imagen}
-                        alt={`Vista ${index + 1} de ${producto.nombre}`}
-                        className="w-full aspect-square object-cover rounded-lg"
-                      />
-                    ))
-                  ) : (
-                    <div className="flex p-2 items-center justify-center text-gray-600 mx-auto">
-                      <AiFillPicture className="w-32 h-32" />
-                      <p className="text-xl pl-2">Sin imagenes disponibles 😔</p>
-                    </div>
-                  )}
+                <div className="sticky top-4">
+                  <div className="grid grid-cols-2 gap-2 mb-6">
+                    {producto.imagenesAdicionales?.length > 0 ? (
+                      (mostrarMas ? producto.imagenesAdicionales : producto.imagenesAdicionales.slice(0, 4)).map((imagen, index) => (
+                        <img
+                          key={index}
+                          src={imagen}
+                          alt={`Vista ${index + 1} de ${producto.nombre}`}
+                          className="w-full aspect-square object-cover rounded-lg"
+                        />
+                      ))
+                    ) : (
+                      <div className="flex p-2 items-center justify-center text-gray-600 mx-auto">
+                        <AiFillPicture className="w-32 h-32" />
+                        <p className="text-xl pl-2">Sin imagenes disponibles 😔</p>
+                      </div>
+                    )}
+                  </div>
+                  <button 
+                    className="w-full py-3 px-4 bg-amber-600 text-white text-xl rounded-lg font-medium hover:bg-amber-700 transition-colors"
+                    onClick={() => setMostrarMas(!mostrarMas)}
+                  >
+                    {mostrarMas ? 'Ver menos' : 'Ver más'}
+                  </button>
+                  <p className="text-xl font-bold text-secondary text-right py-4 px-2">Desde ${producto.precioRenta} / día*</p>
                 </div>
-                <button className="w-full py-3 px-4 bg-amber-600 text-white text-xl rounded-lg font-medium hover:bg-amber-700 transition-colors">
-                  Ver más
-                </button>
-                <p className="text-xl font-bold text-secondary text-right py-4 px-2">Desde ${producto.precioRenta} / día*</p>
-              </div>
               </div>
             </div>
           </div>
