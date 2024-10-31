@@ -10,6 +10,17 @@
     width: 100%;
   }
 
+  header{
+    border-bottom: 1px solid ;
+  }
+  footer{
+    border-top: 1px solid ;
+  }
+
+  .tiny-text{
+    font-size: 0.5rem;
+  }
+
   .search-section,
   .categories-section{
     background-image: url('https://res.cloudinary.com/dr1jbzn9r/image/upload/v1730406007/bg_search_wfisto.png');

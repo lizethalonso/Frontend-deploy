@@ -47,7 +47,7 @@ const Admin = () => {
                 <div className="min-h-screen pt-8 bg-black">
                     <SubHeader title={"Panel de Administración"} buttons={buttons} />
                     {isCreatingProduct ? (
-                        <section className="py-24 bg-black h-full mx-20 mt-16">
+                        <section className="py-24 bg-black h-full mx-24 mt-20">
                             <Form
                                 edit={false}
                                 onClose={handleListProducts}

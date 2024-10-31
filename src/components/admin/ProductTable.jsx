@@ -48,7 +48,7 @@ const ProductTable = () => {
 	}, [successMessage, errorMessage]);
 
 	return (
-		<section className="py-20  h-full">
+		<section className="py-28  h-full">
 			<h3 className="text-center text-white my-6 text-lg font-bold">
 				Listado de Obras
 			</h3>

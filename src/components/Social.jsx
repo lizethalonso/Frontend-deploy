@@ -1,12 +1,17 @@
 import { CiInstagram, CiFacebook, CiLinkedin } from "react-icons/ci";
 import { BsTwitterX } from "react-icons/bs";
 
+import { MdFacebook } from "react-icons/md";
+import { PiInstagramLogoFill } from "react-icons/pi";
+import { AiFillTikTok } from "react-icons/ai";
+
+
 const Social = () => {
 	const icons = [
-		{ component: CiFacebook, url: "https://facebook.com" },
-		{ component: CiInstagram, url: "https://instagram.com" },
-		{ component: CiLinkedin, url: "https://linkedin.com" },
-		{ component: BsTwitterX, url: "https://twitter.com" }
+		{ component: MdFacebook, url: "https://facebook.com" },
+		{ component: PiInstagramLogoFill, url: "https://instagram.com" },
+		{ component: AiFillTikTok, url: "https://tiktok.com" },
+		
 	];
 
 	return (
@@ -14,13 +19,13 @@ const Social = () => {
 			{icons.map((icon, index) => {
 				const Icon = icon.component;
 				// Aplica "text-sm" solo al icono de X que es mas alto que los demas
-				const iconClass = index === icons.length - 1 ? "text-md" : "text-xl";
+				
 				return (
 					<a
 						href={icon.url}
 						target="_blank"
 						rel="noopener noreferrer"
-						className={`text-white hover:text-amber-500 ${iconClass}`}
+						className={`text-primary text-xl`}
 						key={index}
 					>
 						<Icon />
