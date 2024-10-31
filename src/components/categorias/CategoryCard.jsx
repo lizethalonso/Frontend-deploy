@@ -14,7 +14,7 @@ const CategoryCard = ({ producto }) => {
           </div>
           
           <div className="absolute bottom-0 w-full transform bg-white/10 p-4 backdrop-blur-md transition-all duration-300 group-hover:bg-black/50 hover:cursor-pointer">
-            <h3 className="text-center text-xl font-medium text-black transition-colors duration-300 group-hover:text-primary">
+            <h3 className="text-center text-2xl font-medium text-white transition-colors duration-300 group-hover:text-primary">
               {producto.movimientoArtistico.nombre}
             </h3>
           </div>

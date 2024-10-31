@@ -5,8 +5,8 @@ import '../styles/App.css'
 const Buscador = () => {
   return (
     <section className="mx-auto bg-primary p-7 flex-col justify-center items-center text-center w-full search-section">
-        <h1 className="text-2xl mb-4 text-white text-left px-24 pt-6">Busca y alquila tus obras de arte favoritas</h1>
-        <form action="" className="flex justify-left gap-6 p-5 px-24 items-center">
+        <h1 className="text-2xl mb-4 text-white text-left px-4 md:px-24 pt-6">Busca y alquila tus obras de arte favoritas</h1>
+        <form action="" className="flex flex-col md:flex-row justify-left gap-6 p-5 px-4 md:px-24 items-center">
         <div className="relative w-full max-w-md">
             <input
               type="text"
