@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
-    <div className="relative w-screen ">
+    <div className="relative w-full ">
       <Header />
       <Outlet />
       <Footer />
