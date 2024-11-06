@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import { FaTimes } from "react-icons/fa";	
 import FormField from "./FormField";
 import ImageUpload from "./ImageUpload";
-
+import { useContextGlobal } from "../../utils/global.context"; 
 
 const Form = ({ edit, obra = {}, onClose, setSuccessMessage, setErrorMessage }) => {
+	const { postObra, updateObra, state } = useContextGlobal(); 
+
 	const initialFormData = {
 		nombre: "",
 		fechaCreacion: "",
@@ -18,6 +20,7 @@ const Form = ({ edit, obra = {}, onClose, setSuccessMessage, setErrorMessage }) 
 	};
 
 	const [formData, setFormData] = useState(edit ? { ...obra } : initialFormData);
+	const [files, setFiles] = useState([]); // Estado para almacenar archivos subidos
 
 	useEffect(() => {
 		if (edit) {
@@ -46,21 +49,51 @@ const Form = ({ edit, obra = {}, onClose, setSuccessMessage, setErrorMessage }) 
 		}
 	};
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-
-		// Aquí debes verificar si el producto ya existe
-		const existingProduct = false; // Cambia esto según tu lógica
-		if (existingProduct) {
-			setErrorMessage("El nombre del producto ya existe.");
-			return;
-		}
-
-		console.log("Form data:", formData);
-		setSuccessMessage(edit ? "La obra se ha editado correctamente." : "La obra se ha creado correctamente.");
-		onClose();
+	const handleFilesAdded = (newFiles) => {
+		setFiles(newFiles); // Actualiza el estado con los nuevos archivos
 	};
 
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		
+		// Asegúrate de que state.data existe y es un array
+		const existingObra = state.data && Array.isArray(state.data) 
+			? state.data.find(o => o.nombre === formData.nombre) 
+			: null; // Maneja el caso donde state.data es undefined o no es un array
+		
+		if (existingObra && !edit) {
+			setErrorMessage("El nombre de la obra ya existe.");
+			return;
+		}
+		
+		try {
+			const formDataToSend = new FormData();
+			
+			// Añadir los campos del formulario
+			for (const key in formData) {
+				formDataToSend.append(key, formData[key]);
+			}
+
+			// Añadir los archivos a FormData
+			files.forEach((file) => {
+				formDataToSend.append("files", file); // Cambia "files" por el nombre del campo que el backend espera
+			});
+
+			if (edit) {
+				await updateObra(formDataToSend); // Llama a la función de actualización
+				setSuccessMessage("La obra se ha editado correctamente.");
+			} else {
+				await postObra(formDataToSend); // Llama a la función de creación
+				setSuccessMessage("La obra se ha creado correctamente.");
+			}
+		} catch (error) {
+			setErrorMessage("Error al guardar la obra. Por favor, intenta nuevamente.");
+			console.error("Error saving obra:", error);
+		}
+
+		onClose();
+	};
+	
 	// Filtros de campos anidados para creación y edición
 	const fieldsToRender = edit
 		? Object.keys(obra).filter(field => field !== "img" && field !== "id" && field !== "tecnicaObra" && field !== "movimientoArtistico" && field !== "artista")
@@ -142,7 +175,7 @@ const Form = ({ edit, obra = {}, onClose, setSuccessMessage, setErrorMessage }) 
 				<form onSubmit={handleSubmit}>
 					{renderFields(fieldsToRender)}
 					{renderNestedFields()}
-					<ImageUpload onFilesAdded={(file) => console.log(file)} existingImage={edit ? obra.img : null} />
+					<ImageUpload onFilesAdded={handleFilesAdded} existingImage={edit ? obra.img : null} />
 					<div className="flex justify-between mt-4">
 						<button type="submit" className="bg-amber-600 text-white py-2 px-4 rounded">
 							Guardar

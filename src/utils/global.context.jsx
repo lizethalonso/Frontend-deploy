@@ -1,13 +1,5 @@
-import axios from "axios";
-import {
-	createContext,
-	useContext,
-	useEffect,
-	useReducer,
-	useState,
-} from "react";
+import { useState, useEffect, useReducer, createContext, useContext } from "react";
 import { reducer } from "../reducers/reducer";
-import data from "./data.json";
 import { obrasService } from "../api/services";
 
 export const ContextGlobal = createContext(undefined);
@@ -15,44 +7,94 @@ export const ContextGlobal = createContext(undefined);
 export const initialState = { theme: "light", data: [] };
 
 export const ContextProvider = ({ children }) => {
-	const [state, dispatch] = useReducer(reducer, initialState);
-	const [isMobile, setIsMobile] = useState(false);
+    const [state, dispatch] = useReducer(reducer, initialState);
+    const [isLoading, setIsLoading] = useState(true);
+    const [isMobile, setIsMobile] = useState(false);
 
-	// evaluar si es mobile
-	const checkIfMobile = () => {
-		setIsMobile(window.innerWidth < 769);
-	};
+    // Configuración de Cloudinary
+    const cloudName = "dr1jbzn9r"; // Tu nombre de nube
+    const uploadPreset = "ml_default"
 
-	useEffect(() => {
-		checkIfMobile();
-		window.addEventListener("resize", checkIfMobile);
+    const checkIfMobile = () => {
+        setIsMobile(window.innerWidth < 769);
+    };
 
-		return () => {
-			window.removeEventListener("resize", checkIfMobile);
-		};
-	}, []);
+    useEffect(() => {
+        checkIfMobile();
+        window.addEventListener("resize", checkIfMobile);
 
+        return () => {
+            window.removeEventListener("resize", checkIfMobile);
+        };
+    }, []);
 
-/* 	useEffect(() => {
-		const data = obrasService.getObras();
-			console.log(data);
-			dispatch({ type: "GET_ART", payload: data });
-		;
-	}, []); */
+    useEffect(() => {
+        const fetchObras = async () => {
+            try {
+                const data = await obrasService.getObras();
+                dispatch({ type: "GET_OBRA", payload: data });
+            } catch (error) {
+                console.error("Error fetching obras:", error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
 
-	const url = data;  // Prueba con data.json
+        fetchObras();
+    }, []);
 
- 	useEffect(() => {
-		dispatch({ type: "GET_ART", payload: url });
-	}, []); 
+    const postObra = async (obra) => {
+        try {
+            const newObra = await obrasService.createObra(obra);
+            dispatch({ type: "POST_OBRA", payload: newObra });
+        } catch (error) {
+            console.error("Error creating obra:", error);
+        }
+    };
 
-	return (
-		<ContextGlobal.Provider value={{ state, dispatch, isMobile }}>
-			{children}
-		</ContextGlobal.Provider>
-	);
+    const updateObra = async (obra) => {
+        try {
+            const updatedObra = await obrasService.updateObra(obra);
+            dispatch({ type: "UPDATE_OBRA", payload: updatedObra });
+        } catch (error) {
+            console.error("Error updating obra:", error);
+        }
+    };
+
+    const deleteObra = async (id) => {
+        try {
+            await obrasService.deleteObra(id);
+            dispatch({ type: "DELETE_OBRA", payload: id });
+        } catch (error) {
+            console.error("Error deleting obra:", error);
+        }
+    };
+
+    return (
+        <ContextGlobal.Provider
+            value={{
+                state,
+                dispatch,
+                isMobile,
+                isLoading,
+                postObra,
+                updateObra,
+                deleteObra,
+                cloudName, // Proporciona el nombre de la nube
+                uploadPreset, // Proporciona el upload preset
+            }}
+        >
+            {children}
+        </ContextGlobal.Provider>
+    );
 };
 
+export const useContextGlobal = () => useContext(ContextGlobal);
 export default ContextProvider;
 
-export const useContextGlobal = () => useContext(ContextGlobal);
+
+	/* const url = data;  // Prueba con data.json
+
+ 	useEffect(() => {
+		dispatch({ type: "GET_obra", payload: url });
+	}, []);  */

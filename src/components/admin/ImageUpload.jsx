@@ -9,7 +9,9 @@ const ImageUpload = ({ onFilesAdded, existingImage }) => {
             ...prevFiles,
             [objectURL]: file,
         }));
-        onFilesAdded(file); // Llama a la función para pasar los archivos al componente padre
+
+        // Llamar a onFilesAdded con el archivo
+        onFilesAdded(file); // Enviar el archivo directamente al padre
     };
 
     const handleFileChange = (e) => {
@@ -36,7 +38,6 @@ const ImageUpload = ({ onFilesAdded, existingImage }) => {
     };
 
     useEffect(() => {
-        // Cargar la imagen existente si hay una
         if (existingImage) {
             setFiles((prevFiles) => ({
                 ...prevFiles,
@@ -49,8 +50,8 @@ const ImageUpload = ({ onFilesAdded, existingImage }) => {
         <div
             className="mt-4 border-2 border-dashed border-gray-400 py-12 flex flex-col items-center"
             onDrop={handleDrop}
-            onDragOver={(e) => e.preventDefault()} // Prevenir el comportamiento predeterminado
-            onClick={(e) => e.stopPropagation()} // Prevenir la propagación del click
+            onDragOver={(e) => e.preventDefault()}
+            onClick={(e) => e.stopPropagation()}
         >
             <p className="mb-3 font-semibold text-gray-900">Arrastra y suelta tus archivos aquí o</p>
             <input
@@ -59,13 +60,13 @@ const ImageUpload = ({ onFilesAdded, existingImage }) => {
                 multiple
                 className="hidden"
                 onChange={handleFileChange}
-                onClick={(e) => e.stopPropagation()} // Prevenir la propagación del click
+                onClick={(e) => e.stopPropagation()}
             />
             <button
                 className="mt-2 rounded-sm px-3 py-1 bg-gray-200 hover:bg-gray-300 focus:shadow-outline focus:outline-none"
                 onClick={(e) => {
-                    e.preventDefault(); // Evitar cualquier comportamiento predeterminado
-                    e.stopPropagation(); // Evitar el cierre del formulario
+                    e.preventDefault();
+                    e.stopPropagation();
                     document.getElementById("hidden-input").click();
                 }}
             >
