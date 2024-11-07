@@ -45,6 +45,7 @@ export const ContextProvider = ({ children }) => {
 
     const postObra = async (obra) => {
         try {
+            // Si se están subiendo archivos, pasa también 'files'
             const newObra = await obrasService.createObra(obra);
             dispatch({ type: "POST_OBRA", payload: newObra });
         } catch (error) {
@@ -91,10 +92,3 @@ export const ContextProvider = ({ children }) => {
 
 export const useContextGlobal = () => useContext(ContextGlobal);
 export default ContextProvider;
-
-
-	/* const url = data;  // Prueba con data.json
-
- 	useEffect(() => {
-		dispatch({ type: "GET_obra", payload: url });
-	}, []);  */

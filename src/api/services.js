@@ -17,36 +17,20 @@ export const obrasService = {
             console.error(error);
         }
     },
-
-    createObra: async (obra, files) => {
+    createObra: async (obra) => {
         try {
-            const formData = new FormData();
-            
-            // Agregar los datos de la obra
-            formData.append("obra", new Blob([JSON.stringify(obra)], { type: "application/json" }));
-    
-            // Agregar archivos, si los hay
-            if (files && files.length) {
-                for (let i = 0; i < files.length; i++) {
-                    formData.append("files", files[i]);
-                }
-            } else {
-                console.warn("No files provided or files is not an array");
-            }
-    
-            // Enviar la solicitud POST
-            const response = await axiosConfig.post("/obra", formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data', 
-                },
+            const response = await axiosConfig.post("/obra", obra, {
+                headers: { 'Content-Type': 'multipart/form-data' },
             });
-    
+
+            console.log("Response:", response);
             return response.data;
         } catch (error) {
             console.error("Error al crear la obra:", error);
-            throw error; 
+            throw error;
         }
     },
+
 
     updateObra: async (obra) => {
         try {
@@ -59,13 +43,10 @@ export const obrasService = {
 
     deleteObra: async (id) => {
         try {
-            const response = await axiosConfig.delete(`/obra/eliminar/${id}`);
+            const response = await axiosConfig.delete(`/obra/${id}`);
             return response.data;
         } catch (error) {
             console.error(error);
         }
     },
-
-    
 };
-

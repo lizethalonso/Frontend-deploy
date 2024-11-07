@@ -11,7 +11,7 @@ const ImageUpload = ({ onFilesAdded, existingImage }) => {
         }));
 
         // Llamar a onFilesAdded con el archivo
-        onFilesAdded(file); // Enviar el archivo directamente al padre
+        onFilesAdded([file]); // Enviar el archivo directamente al padre
     };
 
     const handleFileChange = (e) => {

@@ -7,12 +7,12 @@ import Modal from "./Modal";
 import Message from "./Message";
 
 const ProductTable = () => {
-	const { state, setState } = useContextGlobal(); 
+	const { state, setState } = useContextGlobal();
 	const itemsPerPage = 5;
 	const [currentPage, setCurrentPage] = useState(1);
 	const [editingItem, setEditingItem] = useState(null);
 	const [deletingItem, setDeletingItem] = useState(null);
-	const [successMessage, setSuccessMessage] = useState(""); 
+	const [successMessage, setSuccessMessage] = useState("");
 	const [errorMessage, setErrorMessage] = useState("");
 	const headers = ["ID", "Imagen", "Nombre", "Descripción", "Acciones"];
 
@@ -29,10 +29,26 @@ const ProductTable = () => {
 		setDeletingItem(id);
 	};
 
-	const confirmDelete = () => {
-		console.log("Delete", deletingItem); 
-		setSuccessMessage("El producto se ha eliminado correctamente");
-		setDeletingItem(null); 
+	const confirmDelete = async () => {
+		try {
+			// Call the delete service to delete the item from the backend
+			await obrasService.deleteObra(deletingItem);
+	
+			// Update the state to remove the deleted item from the list
+			setState((prevState) => ({
+				...prevState,
+				data: prevState.data.filter((item) => item.id !== deletingItem),
+			}));
+	
+			// Show success message
+			setSuccessMessage("La obra se ha eliminado correctamente");
+	
+		} catch (error) {
+			// Handle any error that occurs during deletion
+			setErrorMessage("Hubo un error al eliminar la obra");
+		} finally {
+			setDeletingItem(null); // Close the modal after the action
+		}
 	};
 
 	// Efecto para ocultar los mensajes después de unos segundos
