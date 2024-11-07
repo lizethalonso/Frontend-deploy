@@ -20,9 +20,9 @@ const Form = ({
 		precioRenta: "",
 		disponibilidad: "true",
 		tamano: "",
-		tecnicaObra: { id: "" },
-		movimientoArtistico: { id: "" },
-		artista: { id: "" },
+		tecnicaObra: { nombre: "" },
+		movimientoArtistico: { nombre: "" },
+		artista: { nombre: "" },
 	};
 
 	const [formData, setFormData] = useState(
@@ -73,9 +73,9 @@ const Form = ({
 		formDataToSend.append("tamano", formData.tamano);
 	
 		// Flatten the nested objects, e.g., tecnicaObra.id, movimientoArtistico.id, artista.id
-		formDataToSend.append("tecnicaObra.id", formData.tecnicaObra.id);
-		formDataToSend.append("movimientoArtistico.id", formData.movimientoArtistico.id);
-		formDataToSend.append("artista.id", formData.artista.id);
+		formDataToSend.append("tecnicaObra.nombre", formData.tecnicaObra.nombre);
+		formDataToSend.append("movimientoArtistico.nombre", formData.movimientoArtistico.nombre);
+		formDataToSend.append("artista.nombre", formData.artista.nombre);
 	
 		// Append each file
 		if (files && files.length > 0) {
@@ -162,18 +162,18 @@ const Form = ({
 		const nestedFields = [
 			{
 				label: "Técnica",
-				name: "tecnicaObra.id",
-				value: formData.tecnicaObra?.id || "",
+				name: "tecnicaObra.nombre",
+				value: formData.tecnicaObra?.nombre || "",
 			},
 			{
 				label: "Movimiento Artístico",
-				name: "movimientoArtistico.id",
-				value: formData.movimientoArtistico?.id || "",
+				name: "movimientoArtistico.nombre",
+				value: formData.movimientoArtistico?.nombre || "",
 			},
 			{
 				label: "Artista",
-				name: "artista.id",
-				value: formData.artista?.id || "",
+				name: "artista.nombre",
+				value: formData.artista?.nombre || "",
 			},
 		];
 
