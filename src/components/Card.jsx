@@ -12,7 +12,7 @@ const Card = ({ producto }) => {
       >
         <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-transparent via-black/20 to-black/80 opacity-0" />
         
-        <div className="relative overflow-hidden rounded-xl bg-white/10 backdrop-blur-sm">
+        <div className="relative overflow-hidden h-96 rounded-xl bg-white/10 backdrop-blur-sm">
           <div className="relative">
             <img 
               className="h-48 w-full object-cover" 
@@ -22,7 +22,7 @@ const Card = ({ producto }) => {
             />
           </div>
           
-          <div className="p-4 bg-white">
+          <div className="p-4 bg-white flex flex-col h-48">
             <h3 className="text-2xl font-semibold text-gray-800 mb-2">{producto.nombre}</h3>
             <p className="text-gray-600 text-sm mb-4 line-clamp-2">{producto.descripcion}</p>
             

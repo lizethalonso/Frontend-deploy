@@ -1,13 +1,13 @@
-import { useContextGlobal } from "../utils/global.context"; // Adjust the import path if needed
+import { useContextGlobal } from "../utils/global.context";
 import SubHeader from "../components/SubHeader";
 import ProductTable from "../components/admin/ProductTable";
 import Form from "../components/admin/Form";
 import Message from "../components/admin/Message";
 import IsMobile from "../components/admin/IsMobile";
-import { useState } from "react"; // Ensure useState is imported
+import { useState } from "react";
 
 const Admin = () => {
-    const { isMobile } = useContextGlobal(); // Get isMobile from context
+    const { isMobile } = useContextGlobal();
     const [isCreatingProduct, setIsCreatingProduct] = useState(false);
     const [successMessage, setSuccessMessage] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
