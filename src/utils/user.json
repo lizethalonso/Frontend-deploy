@@ -1,0 +1,44 @@
+[
+      {
+        "id": 1,
+        "name": "Elena",
+        "lastname": "Ponce",
+        "email": "elena.ponce@example.com",
+        "password": "password123",
+        "rol": "ADMIN"
+      },
+      {
+        "id": 2,
+        "name": "Juan",
+        "lastname": "Gomez",
+        "email": "juan.gomez@example.com",
+        "password": "securePass456",
+        "rol": "USER"
+      },
+      {
+        "id": 3,
+        "name": "Maria",
+        "lastname": "Lopez",
+        "email": "maria.lopez@example.com",
+        "password": "pass789",
+        "rol": "COLAB"
+      },
+      {
+        "id": 4,
+        "name": "Carlos",
+        "lastname": "Martinez",
+        "email": "carlos.martinez@example.com",
+        "password": "adminPass001",
+        "rol": "ADMIN"
+      },
+      {
+        "id": 5,
+        "name": "Ana",
+        "lastname": "Fernandez",
+        "email": "ana.fernandez@example.com",
+        "password": "userPass321",
+        "rol": "USER"
+      }
+    ]
+
+  

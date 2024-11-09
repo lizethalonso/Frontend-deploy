@@ -1,6 +1,8 @@
 import { useContextGlobal } from "../utils/global.context";
 import SubHeader from "../components/SubHeader";
 import ProductTable from "../components/admin/ProductTable";
+import UserTable from "../components/admin/UserTable"; 
+import CategoryTable from "../components/admin/CategoryTable";
 import Form from "../components/admin/Form";
 import Message from "../components/admin/Message";
 import IsMobile from "../components/admin/IsMobile";
@@ -8,7 +10,7 @@ import { useState } from "react";
 import Sidebar from "../components/admin/Sidebar";
 
 const AdminAsidePrueba = () => {
-	const { isMobile } = useContextGlobal();
+	const { isMobile, state } = useContextGlobal();
 	const [isCreatingProduct, setIsCreatingProduct] = useState(false);
 	const [successMessage, setSuccessMessage] = useState("");
 	const [errorMessage, setErrorMessage] = useState("");
@@ -16,12 +18,12 @@ const AdminAsidePrueba = () => {
 	const handleAddProduct = () => {
 		setIsCreatingProduct(true);
 	};
-
+    const activeSection = state.activeSection;
 	const handleListProducts = () => {
 		setIsCreatingProduct(false);
-        setEditingItem(null);
+		setEditingItem(null);
 	};
-
+    
 	const buttons = {
 		1: [
 			{
@@ -53,24 +55,29 @@ const AdminAsidePrueba = () => {
 					/>
 					{isCreatingProduct ? (
 						<section className="flex w-screen h-screen-28 ">
-                            <Sidebar />
-                            <div className="flex flex-col items-center grow max-h-screen  pt-44 relative">
-
-							<Form
-								edit={false}
-								onClose={handleListProducts}
-								setSuccessMessage={setSuccessMessage}
-								setErrorMessage={setErrorMessage}
-							/>
-                            </div>
+							<Sidebar />
+							<div className="flex flex-col items-center grow max-h-screen pt-44 relative">
+								<Form
+									edit={false}
+									onClose={handleListProducts}
+									setSuccessMessage={setSuccessMessage}
+									setErrorMessage={setErrorMessage}
+								/>
+							</div>
 						</section>
 					) : (
 						<section className="flex w-screen h-screen-28 ">
 							<Sidebar />
-							<ProductTable
-								setSuccessMessage={setSuccessMessage}
-								setErrorMessage={setErrorMessage}
-							/>
+							{activeSection === "obras" && (
+								<ProductTable
+									setSuccessMessage={setSuccessMessage}
+									setErrorMessage={setErrorMessage}
+								/>
+							)}
+							{activeSection === "usuarios" && <UserTable />}
+							{activeSection === "categorias" && (
+								<CategoryTable />
+							)}
 						</section>
 					)}
 

@@ -6,8 +6,8 @@ import Form from "./Form";
 import Modal from "./Modal";
 import Message from "./Message";
 
-const ProductTable = () => {
-	const { state, setState } = useContextGlobal();
+const CategoryTable = () => {
+    const { state, setState } = useContextGlobal();
 	const itemsPerPage = 5;
 	const [currentPage, setCurrentPage] = useState(1);
 	const [editingItem, setEditingItem] = useState(null);
@@ -17,20 +17,17 @@ const ProductTable = () => {
 	const headers = [
 		"ID",
 		"Imagen",
-		"Nombre",
+		"Titulo",
 		"Descripción",
-		"Categoría",
-		"Características",
-		"Acciones",
 	];
 
 	const indexOfLastItem = currentPage * itemsPerPage;
 	const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-	const currentItems = state.data.slice(indexOfFirstItem, indexOfLastItem);
-	const totalPages = Math.ceil(state.data.length / itemsPerPage);
+	const currentItems = state.categories.slice(indexOfFirstItem, indexOfLastItem);
+	const totalPages = Math.ceil(state.categories.length / itemsPerPage);
 
-	const handleEdit = (obra) => {
-		setEditingItem(obra);
+	const handleEdit = (categoria) => {
+		setEditingItem(categoria);
 	};
 
 	const handleDelete = (id) => {
@@ -58,18 +55,10 @@ const ProductTable = () => {
 	return (
 		<div className="flex flex-col items-center grow max-h-screen  pt-28 relative ">
 			<div className="rounded-lg border border-gray-200  max-h-screen mt-2">
-				{editingItem ? (
-					<Form
-						edit={true}
-						obra={editingItem}
-						onClose={() => setEditingItem(null)}
-						setSuccessMessage={setSuccessMessage}
-						setErrorMessage={setErrorMessage}
-					/>
-				) : (
+				
 					<div className="h-[70vh] w-[75vw] max-w-[75vw] flex  flex-col">
 						<h3 className="text-center text-white py-4 text-lg font-bold">
-							Listado de Obras
+							Listado de Categorías
 						</h3>
 
 						<div
@@ -90,61 +79,33 @@ const ProductTable = () => {
 									</tr>
 								</thead>
 								<tbody className="divide-y divide-gray-200">
-									{currentItems.map((obra) => (
-										<tr key={obra.id}>
+									{currentItems.map((categoria) => (
+										<tr key={categoria.id}>
 											<td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
-												{obra.id}
+												{categoria.id}
 											</td>
 											<td className="whitespace-nowrap px-4 py-2 text-gray-700 text-left">
 												<img
-													src={obra.img}
+													src={categoria.url}
 													alt={
-														obra.nombre || "Imagen"
+														categoria.nombre || "Imagen"
 													}
 													className="w-16 h-16 object-cover"
 												/>
 											</td>
 											<td className="break-words whitespace-wrap px-4 py-2 text-gray-700 text-left">
-												{obra.nombre ||
+												{categoria.nombre ||
 													"Nombre no disponible"}
 											</td>
 											<td className="break-words whitespace-wrap px-4 py-2 text-gray-700 text-left max-w-[40rem]">
-												{obra.descripcion ||
+												{categoria.descripcion ||
 													"Descripción no disponible"}
 											</td>
-											<td className="break-words whitespace-wrap px-4 py-2 text-gray-700 text-left max-w-[40rem]">
-												{obra.movimientoArtistico
-													?.nombre ||
-													"Categoría no disponible"}
-											</td>
-											<td className="word-wrap whitespace-wrap px-4 py-2 text-gray-700  ">
-												<div className="flex flex-wrap space-x-2  items-center gap-1">
-													<span className="tag tiny-text bg-primary px-2 rounded-xl ml-2 ">
-														{obra.tamano ||
-															"Tamaño no disponible"}
-													</span>
-													<span className="tag tiny-text bg-primary px-2 rounded-xl ">
-														{obra.tecnicaObra
-															?.nombre ||
-															"Técnica no disponible"}
-													</span>
-													<span className="tag tiny-text bg-primary px-2  rounded-xl ">
-														{obra.artista?.nombre ||
-															"Artista no disponible"}
-													</span>
-													<span className="tag tiny-text bg-primary px-2 rounded-xl">
-														{obra.fechaCreacion
-															? obra.fechaCreacion.split(
-																	"-"
-															  )[0]
-															: "Fecha no disponible"}
-													</span>
-												</div>
-											</td>
+											
 											<td className="whitespace-nowrap px-4 flex grow gap-2 py-2 text-left">
 												<button
 													onClick={() =>
-														handleEdit(obra)
+														handleEdit(categoria)
 													}
 													className="text-orange text-lg font-bold p-3 border-orange-600 border-2 rounded hover:bg-orange-600/75 hover:text-white hover:border-orange-400"
 												>
@@ -152,7 +113,7 @@ const ProductTable = () => {
 												</button>
 												<button
 													onClick={() =>
-														handleDelete(obra.id)
+														handleDelete(categoria.id)
 													}
 													className="text-red text-lg font-bold p-3 border-red-600 border-2 rounded hover:bg-red-600/75 hover:text-white hover:border-red-400"
 												>
@@ -170,7 +131,7 @@ const ProductTable = () => {
 							totalPages={totalPages}
 						/>
 					</div>
-				)}
+				
 			</div>
 
 			{/* Mostrar mensajes */}
@@ -211,4 +172,4 @@ const ProductTable = () => {
 	);
 };
 
-export default ProductTable;
+export default CategoryTable
