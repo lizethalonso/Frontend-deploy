@@ -24,6 +24,18 @@ const UserTable = () => {
         "Rol"
     ];
 
+    // Mapeo de roles
+    const roleMapping = {
+        ADMIN: "ADMINISTRADOR",
+        USER: "USUARIO",
+        COLAB: "COLABORADOR"
+    };
+
+    // Función para mapear los roles a sus versiones legibles
+    const mapRole = (role) => {
+        return roleMapping[role] || "Rol no disponible";
+    };
+
     // Calcular los índices para la paginación
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -42,6 +54,15 @@ const UserTable = () => {
         console.log("Delete", deletingItem);
         setSuccessMessage("El usuario se ha eliminado correctamente");
         setDeletingItem(null);
+    };
+
+    const handleRoleChange = (userId, newRole) => {
+        // Convertimos el nuevo rol a su valor original para guardarlo en la base de datos
+        const roleValue = Object.keys(roleMapping).find(key => roleMapping[key] === newRole);
+        const updatedUsers = state.users.map(user => 
+            user.id === userId ? { ...user, rol: roleValue } : user
+        );
+        setState({ ...state, users: updatedUsers });
     };
 
     // Efecto para ocultar los mensajes después de unos segundos
@@ -94,7 +115,15 @@ const UserTable = () => {
                                             {user.email || "Correo no disponible"}
                                         </td>
                                         <td className="whitespace-nowrap px-4 py-2 text-gray-700 text-left">
-                                            {user.rol || "Rol no disponible"}
+                                            <select 
+                                                value={mapRole(user.rol)} 
+                                                onChange={(e) => handleRoleChange(user.id, e.target.value)}
+                                                className="bg-white border border-gray-300 rounded-lg p-1"
+                                            >
+                                                <option value="ADMINISTRADOR">ADMINISTRADOR</option>
+                                                <option value="COLABORADOR">COLABORADOR</option>
+                                                <option value="USUARIO">USUARIO</option>
+                                            </select>
                                         </td>
                                         <td className="whitespace-nowrap px-4 flex gap-2 py-2 text-left">
                                             <button
@@ -162,3 +191,4 @@ const UserTable = () => {
 };
 
 export default UserTable;
+

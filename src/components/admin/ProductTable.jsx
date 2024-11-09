@@ -55,6 +55,38 @@ const ProductTable = () => {
 		}
 	}, [successMessage, errorMessage]);
 
+	const priceRangeCalculator = (precioRenta) => {
+		const precios = state.data
+			.filter((obra) => obra.precioRenta)
+			.map((obra) => obra.precioRenta);
+
+		if (precios.length === 0) {
+			return "Precio no disponible";
+		}
+
+		const minPrice = Math.min(...precios);
+		const maxPrice = Math.max(...precios);
+		const avgPrice = (minPrice + maxPrice) / 2;
+
+		if (precioRenta <= minPrice + (maxPrice - minPrice) * 0.3) {
+			return "$"; // Precio bajo
+		} else if (precioRenta <= minPrice + (maxPrice - minPrice) * 0.7) {
+			return "$$"; // Precio medio
+		} else {
+			return "$$$"; // Precio alto
+		}
+	};
+	const roundToNearest50 = (year) => {
+		// Se calcula el múltiplo de 50 más cercano al año
+		const remainder = year % 50;
+		if (remainder < 25) {
+			// Si el resto es menor que 25, redondeamos hacia abajo
+			return year - remainder;
+		} else {
+			// Si el resto es mayor o igual que 25, redondeamos hacia arriba
+			return year + (50 - remainder);
+		}
+	};
 	return (
 		<div className="flex flex-col items-center grow max-h-screen  pt-28 relative ">
 			<div className="rounded-lg border border-gray-200  max-h-screen mt-2">
@@ -118,25 +150,31 @@ const ProductTable = () => {
 													"Categoría no disponible"}
 											</td>
 											<td className="word-wrap whitespace-wrap px-4 py-2 text-gray-700  ">
-												<div className="flex flex-wrap space-x-2  items-center gap-1">
+												<div className="flex flex-wrap space-x-2 items-center gap-1">
 													<span className="tag tiny-text bg-primary px-2 rounded-xl ml-2 ">
 														{obra.tamano ||
 															"Tamaño no disponible"}
+													</span>
+													<span className="tag tiny-text bg-primary px-2 rounded-xl">
+														{priceRangeCalculator(
+															obra.precioRenta
+														)}
 													</span>
 													<span className="tag tiny-text bg-primary px-2 rounded-xl ">
 														{obra.tecnicaObra
 															?.nombre ||
 															"Técnica no disponible"}
 													</span>
-													<span className="tag tiny-text bg-primary px-2  rounded-xl ">
-														{obra.artista?.nombre ||
-															"Artista no disponible"}
-													</span>
+
 													<span className="tag tiny-text bg-primary px-2 rounded-xl">
 														{obra.fechaCreacion
-															? obra.fechaCreacion.split(
-																	"-"
-															  )[0]
+															? roundToNearest50(
+																	parseInt(
+																		obra.fechaCreacion.split(
+																			"-"
+																		)[0]
+																	)
+															  )
 															: "Fecha no disponible"}
 													</span>
 												</div>

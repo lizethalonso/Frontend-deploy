@@ -15,33 +15,36 @@ const AdminAsidePrueba = () => {
 	const [successMessage, setSuccessMessage] = useState("");
 	const [errorMessage, setErrorMessage] = useState("");
 
-	const handleAddProduct = () => {
+	const handleAddItems = () => {
 		setIsCreatingProduct(true);
 	};
-    const activeSection = state.activeSection;
+
+	const handleListItems = () => {
+		setIsCreatingProduct(false);
+	};
+
+	const activeSection = state.activeSection;
 	const handleListProducts = () => {
 		setIsCreatingProduct(false);
 		setEditingItem(null);
 	};
-    
+
 	const buttons = {
-		1: [
-			{
-				text: "Agregar producto",
-				textColor: "primary",
-				bgColor: "transparent",
-				action: handleAddProduct,
-			},
+		obras: [
+		  { text: "Agregar producto", textColor: "primary", bgColor: "transparent", action: handleAddItems },
+		  { text: "Lista de productos", textColor: "primary", bgColor: "transparent", action: handleListItems },
 		],
-		2: [
-			{
-				text: "Lista de productos",
-				textColor: "primary",
-				bgColor: "transparent",
-				action: handleListProducts,
-			},
+		usuarios: [
+		  { text: "Agregar usuario", textColor: "primary", bgColor: "transparent", action: handleAddItems },
+		  { text: "Lista de usuarios", textColor: "primary", bgColor: "transparent", action: handleListItems },
+		],
+		categorias: [
+		  { text: "Agregar categoría", textColor: "primary", bgColor: "transparent", action: handleAddItems },
+		  { text: "Lista de categorías", textColor: "primary", bgColor: "transparent", action: handleListItems },
 		],
 	};
+
+	const buttonsToDisplay = { [activeSection]: buttons[activeSection] || [] };	  
 
 	return (
 		<>
@@ -51,7 +54,7 @@ const AdminAsidePrueba = () => {
 				<div className="min-h-screen pt-8 bg-black">
 					<SubHeader
 						title={"Panel de Administración"}
-						buttons={buttons}
+						buttons={buttonsToDisplay}
 					/>
 					{isCreatingProduct ? (
 						<section className="flex w-screen h-screen-28 ">
@@ -68,36 +71,21 @@ const AdminAsidePrueba = () => {
 					) : (
 						<section className="flex w-screen h-screen-28 ">
 							<Sidebar />
-							{activeSection === "obras" && (
-								<ProductTable
-									setSuccessMessage={setSuccessMessage}
-									setErrorMessage={setErrorMessage}
-								/>
-							)}
+							{activeSection === "obras" && <ProductTable setSuccessMessage={setSuccessMessage} setErrorMessage={setErrorMessage} />}
 							{activeSection === "usuarios" && <UserTable />}
-							{activeSection === "categorias" && (
-								<CategoryTable />
-							)}
+							{activeSection === "categorias" && <CategoryTable />}
 						</section>
 					)}
 
 					{/* Mensajes a componentizar */}
 					{successMessage && (
 						<div className="fixed bottom-4 right-4 z-50 mb-4">
-							<Message
-								type="success"
-								text={successMessage}
-								onClose={() => setSuccessMessage("")}
-							/>
+							<Message type="success" text={successMessage} onClose={() => setSuccessMessage("")} />
 						</div>
 					)}
 					{errorMessage && (
 						<div className="fixed bottom-4 right-4 z-50 mb-4">
-							<Message
-								type="danger"
-								text={errorMessage}
-								onClose={() => setErrorMessage("")}
-							/>
+							<Message type="danger" text={errorMessage} onClose={() => setErrorMessage("")} />
 						</div>
 					)}
 				</div>

@@ -13,7 +13,7 @@ const Form = ({ edit, obra = {}, onClose, setSuccessMessage, setErrorMessage }) 
 		disponibilidad: true,
 		tamano: "",
 		tecnicaObra: { nombre: "" },
-		movimientoArtistico: { nombreMovimiento: "" },
+		movimientoArtistico: { nombre: "" },
 		artista: { nombre: "" },
 	};
 
@@ -105,8 +105,8 @@ const Form = ({ edit, obra = {}, onClose, setSuccessMessage, setErrorMessage }) 
 			},
 			{
 				label: "Movimiento Artístico", 
-				name: "movimientoArtistico.nombreMovimiento",
-				value: formData.movimientoArtistico?.nombreMovimiento || "",  
+				name: "movimientoArtistico.nombre",
+				value: formData.movimientoArtistico?.nombre || "",  
 			},
 			{
 				label: "Artista", 
