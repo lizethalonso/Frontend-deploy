@@ -5,6 +5,7 @@ import Home from "./pages/Home.jsx";
 import Admin from "./pages/Admin.jsx";
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
+import Profile from './pages/Profile.jsx';
 import ContextProvider from "./utils/global.context.jsx";
 
 
@@ -18,6 +19,7 @@ function App() {
               <Route path="/administracion" element={<Admin />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/profile" element={<Profile />} />
             </Route>
           </Routes>
         </Router>
