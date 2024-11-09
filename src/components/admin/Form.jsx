@@ -129,7 +129,7 @@ const Form = ({ edit, obra = {}, onClose, setSuccessMessage, setErrorMessage }) 
 
 	return (
 		<>
-			<div className="relative bg-white p-6 rounded-lg shadow-md">
+			<div className=" w-[75vw] h-[65vh] overflow-y-scroll relative bg-white p-6 rounded-lg shadow-md">
 				<button
 					onClick={onClose}
 					className="absolute top-2 right-2 bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center"

@@ -7,14 +7,22 @@ import Modal from "./Modal";
 import Message from "./Message";
 
 const ProductTable = () => {
-	const { state, setState } = useContextGlobal(); 
+	const { state, setState } = useContextGlobal();
 	const itemsPerPage = 5;
 	const [currentPage, setCurrentPage] = useState(1);
 	const [editingItem, setEditingItem] = useState(null);
 	const [deletingItem, setDeletingItem] = useState(null);
-	const [successMessage, setSuccessMessage] = useState(""); 
+	const [successMessage, setSuccessMessage] = useState("");
 	const [errorMessage, setErrorMessage] = useState("");
-	const headers = ["ID", "Imagen", "Nombre", "Descripción", "Acciones"];
+	const headers = [
+		"ID",
+		"Imagen",
+		"Nombre",
+		"Descripción",
+		"Categoría",
+		"Características",
+		"Acciones",
+	];
 
 	const indexOfLastItem = currentPage * itemsPerPage;
 	const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -30,9 +38,9 @@ const ProductTable = () => {
 	};
 
 	const confirmDelete = () => {
-		console.log("Delete", deletingItem); 
+		console.log("Delete", deletingItem);
 		setSuccessMessage("El producto se ha eliminado correctamente");
-		setDeletingItem(null); 
+		setDeletingItem(null);
 	};
 
 	// Efecto para ocultar los mensajes después de unos segundos
@@ -48,12 +56,8 @@ const ProductTable = () => {
 	}, [successMessage, errorMessage]);
 
 	return (
-		<section className="py-28  h-full">
-			<h3 className="text-center text-white my-6 text-lg font-bold">
-				Listado de Obras
-			</h3>
-
-			<div className="rounded-lg border border-gray-200 mx-20">
+		<div className="flex flex-col items-center grow max-h-screen  pt-28 relative ">
+			<div className="rounded-lg border border-gray-200  max-h-screen mt-2">
 				{editingItem ? (
 					<Form
 						edit={true}
@@ -63,9 +67,16 @@ const ProductTable = () => {
 						setErrorMessage={setErrorMessage}
 					/>
 				) : (
-					<>
-						<div className="overflow-x-auto rounded-t-lg">
-							<table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+					<div className="h-[70vh] w-[75vw] max-w-[75vw] flex justify-center flex-col">
+						<h3 className="text-center text-white py-4 text-lg font-bold">
+							Listado de Obras
+						</h3>
+
+						<div
+							id="product-table "
+							className=" overflow-y-scroll overflow-x-hidden w-[75vw]"
+						>
+							<table className="divide-y-2 divide-gray-200 bg-white text-sm w-[75vw] ">
 								<thead>
 									<tr>
 										{headers.map((header, index) => (
@@ -87,17 +98,50 @@ const ProductTable = () => {
 											<td className="whitespace-nowrap px-4 py-2 text-gray-700 text-left">
 												<img
 													src={obra.img}
-													alt={obra.nombre}
+													alt={
+														obra.nombre || "Imagen"
+													}
 													className="w-16 h-16 object-cover"
 												/>
 											</td>
-											<td className="whitespace-nowrap px-4 py-2 text-gray-700 text-left">
-												{obra.nombre}
+											<td className="break-words whitespace-wrap px-4 py-2 text-gray-700 text-left">
+												{obra.nombre ||
+													"Nombre no disponible"}
 											</td>
-											<td className="whitespace-nowrap px-4 py-2 text-gray-700 text-left">
-												{obra.descripcion}
+											<td className="break-words whitespace-wrap px-4 py-2 text-gray-700 text-left max-w-[40rem]">
+												{obra.descripcion ||
+													"Descripción no disponible"}
 											</td>
-											<td className="whitespace-nowrap px-4 flex gap-2 py-2 text-left">
+											<td className="break-words whitespace-wrap px-4 py-2 text-gray-700 text-left max-w-[40rem]">
+												{obra.movimientoArtistico
+													?.nombre ||
+													"Categoría no disponible"}
+											</td>
+											<td className="word-wrap whitespace-wrap px-4 py-2 text-gray-700  ">
+												<div className="flex flex-wrap space-x-2  items-center gap-1">
+													<span className="tag tiny-text bg-primary px-2 rounded-xl ml-2 ">
+														{obra.tamano ||
+															"Tamaño no disponible"}
+													</span>
+													<span className="tag tiny-text bg-primary px-2 rounded-xl ">
+														{obra.tecnicaObra
+															?.nombre ||
+															"Técnica no disponible"}
+													</span>
+													<span className="tag tiny-text bg-primary px-2  rounded-xl ">
+														{obra.artista?.nombre ||
+															"Artista no disponible"}
+													</span>
+													<span className="tag tiny-text bg-primary px-2 rounded-xl">
+														{obra.fechaCreacion
+															? obra.fechaCreacion.split(
+																	"-"
+															  )[0]
+															: "Fecha no disponible"}
+													</span>
+												</div>
+											</td>
+											<td className="whitespace-nowrap px-4 flex grow gap-2 py-2 text-left">
 												<button
 													onClick={() =>
 														handleEdit(obra)
@@ -125,7 +169,7 @@ const ProductTable = () => {
 							setCurrentPage={setCurrentPage}
 							totalPages={totalPages}
 						/>
-					</>
+					</div>
 				)}
 			</div>
 
@@ -163,7 +207,7 @@ const ProductTable = () => {
 					onConfirm={confirmDelete}
 				/>
 			)}
-		</section>
+		</div>
 	);
 };
 

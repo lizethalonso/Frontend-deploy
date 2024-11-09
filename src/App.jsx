@@ -6,6 +6,7 @@ import Admin from "./pages/Admin.jsx";
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import ContextProvider from "./utils/global.context.jsx";
+import AdminAsidePrueba from "./pages/AdminAsidePrueba.jsx";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
               <Route path="/administracion" element={<Admin />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/prueba" element={<AdminAsidePrueba />} />
             </Route>
           </Routes>
         </Router>
