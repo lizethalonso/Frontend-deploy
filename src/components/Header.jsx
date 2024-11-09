@@ -78,7 +78,7 @@ const Header = () => {
           </div>
         ) : null}
         {isMenuOpen && (
-          <div ref={menuRef} className="absolute top-12 right-20 top-20 w-32 bg-black rounded-lg shadow-md text-primary">
+          <div ref={menuRef} className="absolute top-12 right-20 top-20 w-32 bg-black rounded-lg shadow-md text-primary z-10">
             <ul className="flex flex-col p-2">
               <li onClick={handleProfile} className="p-2 hover:bg-gray-200 hover:text-black cursor-pointer">
                 Ver Perfil
