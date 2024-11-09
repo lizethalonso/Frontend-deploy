@@ -13,33 +13,73 @@ const Register = () => {
 
   const [errors, setErrors] = useState({});
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+  const nameRegex = /^[a-zA-Z\s]*$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const validateField = (name, value) => {
+    let error = "";
+
+    switch (name) {
+      case "firstName":
+        if (!value) {
+          error = "El nombre es requerido";
+        } else if (!nameRegex.test(value)) {
+          error = "El nombre no es válido";
+        }
+        break;
+
+      case "lastName":
+        if (!value) {
+          error = "El apellido es requerido";
+        } else if (!nameRegex.test(value)) {
+          error = "El apellido no es válido";
+        }
+        break;
+
+      case "email":
+        if (!value) {
+          error = "El email es requerido";
+        } else if (!emailRegex.test(value)) {
+          error = "El email no es válido";
+        }
+        break;
+
+      case "password":
+        if (!value) {
+          error = "La contraseña es requerida";
+        }
+        break;
+
+      case "confirmPassword":
+        if (value !== formData.password) {
+          error = "Las contraseñas no coinciden";
+        }
+        break;
+
+      default:
+        break;
+    }
+
+    setErrors((prevErrors) => ({ ...prevErrors, [name]: error }));
   };
 
-  const validateForm = () => {
-    const newErrors = {};
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
 
-    if (!formData.firstName) newErrors.firstName = "El nombre es requerido";
-    if (!formData.lastName) newErrors.lastName = "El apellido es requerido";
-    if (!formData.email) {
-      newErrors.email = "El email es requerido";
-    } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = "El email no es válido";
-    }
-    if (!formData.password) newErrors.password = "La contraseña es requerida";
-    if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = "Las contraseñas no coinciden";
-    }
-
-    return newErrors;
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    validateField(name, value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const validationErrors = validateForm();
+    const validationErrors = Object.keys(formData).reduce((acc, field) => {
+      validateField(field, formData[field]);
+      if (errors[field]) acc[field] = errors[field];
+      return acc;
+    }, {});
     if (Object.keys(validationErrors).length === 0) {
       const newUser = {
         name: `${formData.firstName} ${formData.lastName}`,
@@ -64,6 +104,7 @@ const Register = () => {
             className="w-full mt-1 p-2 border border-gray-300 rounded-lg"
             value={formData.firstName}
             onChange={handleChange}
+            onBlur={handleBlur}
             required
           />
           {errors.firstName && <p className="text-red-500">{errors.firstName}</p>}
@@ -77,6 +118,7 @@ const Register = () => {
             className="w-full mt-1 p-2 border border-gray-300 rounded-lg"
             value={formData.lastName}
             onChange={handleChange}
+            onBlur={handleBlur}
             required
           />
           {errors.lastName && <p className="text-red-500">{errors.lastName}</p>}
@@ -90,6 +132,7 @@ const Register = () => {
             className="w-full mt-1 p-2 border border-gray-300 rounded-lg"
             value={formData.email}
             onChange={handleChange}
+            onBlur={handleBlur}
             required
           />
           {errors.email && <p className="text-red-500">{errors.email}</p>}
@@ -103,6 +146,7 @@ const Register = () => {
             className="w-full mt-1 p-2 border border-gray-300 rounded-lg"
             value={formData.password}
             onChange={handleChange}
+            onBlur={handleBlur}
             required
           />
           {errors.password && <p className="text-red-500">{errors.password}</p>}
@@ -116,6 +160,7 @@ const Register = () => {
             className="w-full mt-1 p-2 border border-gray-300 rounded-lg"
             value={formData.confirmPassword}
             onChange={handleChange}
+            onBlur={handleBlur}
             required
           />
           {errors.confirmPassword && <p className="text-red-500">{errors.confirmPassword}</p>}
