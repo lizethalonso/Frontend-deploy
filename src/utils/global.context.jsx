@@ -21,6 +21,7 @@ export const initialState = {
     users: loadFromLocalStorage("users") || [],
     images: loadFromLocalStorage("images") || [],  // Cargar imágenes desde localStorage
     activeSection: "obras",
+    loggedUser: 0,
 };
 
 export const ContextProvider = ({ children }) => {
@@ -31,11 +32,9 @@ export const ContextProvider = ({ children }) => {
     const checkIfMobile = () => {
         setIsMobile(window.innerWidth < 769);
     };
-
     useEffect(() => {
         checkIfMobile();
         window.addEventListener("resize", checkIfMobile);
-
         return () => {
             window.removeEventListener("resize", checkIfMobile);
         };

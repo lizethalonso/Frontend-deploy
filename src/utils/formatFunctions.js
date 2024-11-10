@@ -32,5 +32,9 @@ const idCreator = (elementos) => {
 	return maxId + 1;
 };
 
+
+
+
+
 // Exportar ambas funciones
 export { formatLabel, formatDate, idCreator };
