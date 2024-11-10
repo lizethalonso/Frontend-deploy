@@ -1,22 +1,29 @@
 import axios from "axios";
-import { createContext, useContext, useEffect, useReducer, useState } from "react";
+import {
+	createContext,
+	useContext,
+	useEffect,
+	useReducer,
+	useState,
+} from "react";
 import { reducer } from "../reducers/reducer";
 import data from "./data.json";
 import categories from "./category.json";
 import users from "./user.json";
+import { saveToLocalStorage, loadFromLocalStorage } from "./localStorage"; // Importar las funciones de localStorage
 
 export const ContextGlobal = createContext(undefined);
 
-export const initialState = { 
-  theme: "light", 
-  data: [], 
-    categories: [],
-    users: [],
-  activeSection: "obras" 
+export const initialState = {
+    theme: "light",
+    data: loadFromLocalStorage("data") || [],
+    categories: loadFromLocalStorage("categories") || [],
+    users: loadFromLocalStorage("users") || [],
+    images: loadFromLocalStorage("images") || [],  // Cargar imágenes desde localStorage
+    activeSection: "obras",
 };
 
 export const ContextProvider = ({ children }) => {
-    
     const [state, dispatch] = useReducer(reducer, initialState);
     const [isMobile, setIsMobile] = useState(false);
 
@@ -26,38 +33,51 @@ export const ContextProvider = ({ children }) => {
     };
 
     useEffect(() => {
-        checkIfMobile(); 
-        window.addEventListener("resize", checkIfMobile); 
+        checkIfMobile();
+        window.addEventListener("resize", checkIfMobile);
 
         return () => {
-            window.removeEventListener("resize", checkIfMobile); 
+            window.removeEventListener("resize", checkIfMobile);
         };
-    }, []);  // Solo se ejecuta una vez al montar el componente
+    }, []); // Solo se ejecuta una vez al montar el componente
 
-    // Cargar datos desde el archivo JSON
-    const url = data; // Prueba con data.json
-
+    const url = data; // Este es el archivo JSON que contiene los datos predeterminados de las obras
     useEffect(() => {
-        dispatch({ type: "GET_ART", payload: url });
-            }, []);  // Se ejecuta una sola vez al montar el componente
+        if (!loadFromLocalStorage("data")) {
+            dispatch({ type: "GET_ART", payload: url });
+        }
+    }, []);
 
-    // Cargar categorías desde el archivo JSON
-    const urlCategories = categories; // Prueba con category.json
-
+    // Cargar categorías desde el archivo JSON (o desde localStorage si existen)
+    const urlCategories = categories;
     useEffect(() => {
-        dispatch({ type: "GET_CATEGORIES", payload: urlCategories });
-    }
-    , []);  // Se ejecuta una sola vez al montar el componente
+        if (!loadFromLocalStorage("categories")) {
+            dispatch({ type: "GET_CATEGORIES", payload: urlCategories });
+        }
+    }, []);
 
-    // Cargar usuarios desde el archivo JSON
-    const urlUsers = users; // Prueba con user.json
-
+    // Cargar usuarios desde el archivo JSON (o desde localStorage si existen)
+    const urlUsers = users;
     useEffect(() => {
-        dispatch({ type: "GET_USERS", payload: urlUsers });
-    }
-    , []);  // Se ejecuta una sola vez al montar el componente
+        if (!loadFromLocalStorage("users")) {
+            dispatch({ type: "GET_USERS", payload: urlUsers });
+        }
+    }, []);
 
-    
+    // Guardar los cambios de los datos en localStorage
+    useEffect(() => {
+        saveToLocalStorage("data", state.data);
+        saveToLocalStorage("categories", state.categories);
+        saveToLocalStorage("users", state.users);
+    }, [state.data, state.categories, state.users]); // Solo cuando estos cambien
+
+    // Guardar las imágenes en localStorage cuando cambien
+    useEffect(() => {
+        if (state.images.length > 0) {
+            saveToLocalStorage("images", state.images);
+        }
+    }, [state.images]);
+
     return (
         <ContextGlobal.Provider value={{ state, dispatch, isMobile }}>
             {children}
@@ -68,5 +88,3 @@ export const ContextProvider = ({ children }) => {
 export default ContextProvider;
 
 export const useContextGlobal = () => useContext(ContextGlobal);
-
-

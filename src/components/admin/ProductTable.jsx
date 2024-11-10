@@ -7,7 +7,7 @@ import Modal from "./Modal";
 import Message from "./Message";
 
 const ProductTable = () => {
-	const { state, setState } = useContextGlobal();
+	const { state, dispatch } = useContextGlobal(); // Desestructuramos dispatch
 	const itemsPerPage = 5;
 	const [currentPage, setCurrentPage] = useState(1);
 	const [editingItem, setEditingItem] = useState(null);
@@ -37,8 +37,11 @@ const ProductTable = () => {
 		setDeletingItem(id);
 	};
 
+	// Función para confirmar la eliminación
 	const confirmDelete = () => {
-		console.log("Delete", deletingItem);
+		// Enviar acción de eliminación al dispatch
+		dispatch({ type: "DELETE_ART", payload: { id: deletingItem } });
+
 		setSuccessMessage("El producto se ha eliminado correctamente");
 		setDeletingItem(null);
 	};
@@ -76,6 +79,7 @@ const ProductTable = () => {
 			return "$$$"; // Precio alto
 		}
 	};
+
 	const roundToNearest50 = (year) => {
 		// Se calcula el múltiplo de 50 más cercano al año
 		const remainder = year % 50;
@@ -87,9 +91,10 @@ const ProductTable = () => {
 			return year + (50 - remainder);
 		}
 	};
+
 	return (
-		<div className="flex flex-col items-center grow max-h-screen  pt-28 relative ">
-			<div className="rounded-lg border border-gray-200  max-h-screen mt-2">
+		<div className="flex flex-col items-center grow max-h-screen pt-28 relative ">
+			<div className="rounded-lg border border-gray-200 max-h-screen mt-2">
 				{editingItem ? (
 					<Form
 						edit={true}
@@ -99,14 +104,14 @@ const ProductTable = () => {
 						setErrorMessage={setErrorMessage}
 					/>
 				) : (
-					<div className="h-[70vh] w-[75vw] max-w-[75vw] flex  flex-col">
+					<div className="h-[70vh] w-[75vw] max-w-[75vw] flex flex-col">
 						<h3 className="text-center text-white py-4 text-lg font-bold">
 							Listado de Obras
 						</h3>
 
 						<div
 							id="product-table "
-							className=" overflow-y-scroll overflow-x-hidden w-[75vw]"
+							className="overflow-y-scroll overflow-x-hidden w-[75vw]"
 						>
 							<table className="divide-y-2 divide-gray-200 bg-white text-sm w-[75vw] ">
 								<thead>
@@ -128,13 +133,37 @@ const ProductTable = () => {
 												{obra.id}
 											</td>
 											<td className="whitespace-nowrap px-4 py-2 text-gray-700 text-left">
-												<img
-													src={obra.img}
-													alt={
-														obra.nombre || "Imagen"
-													}
-													className="w-16 h-16 object-cover"
-												/>
+												{obra.img ? (
+													<img
+														src={obra.img}
+														alt={
+															obra.nombre ||
+															"Imagen"
+														}
+														className="w-16 h-16 object-cover"
+													/>
+												) : obra.imagenes &&
+												  obra.imagenes.length > 0 ? (
+													<div className="flex gap-2">
+														{obra.imagenes.map(
+															(url, index) => (
+																<img
+																	key={index}
+																	src={url} // Verifica que el url sea base64
+																	alt={`Imagen ${
+																		index +
+																		1
+																	}`}
+																	className="w-16 h-16 object-cover"
+																/>
+															)
+														)}
+													</div>
+												) : (
+													<span>
+														No hay imagen disponible
+													</span>
+												)}
 											</td>
 											<td className="break-words whitespace-wrap px-4 py-2 text-gray-700 text-left">
 												{obra.nombre ||
@@ -149,7 +178,7 @@ const ProductTable = () => {
 													?.nombre ||
 													"Categoría no disponible"}
 											</td>
-											<td className="word-wrap whitespace-wrap px-4 py-2 text-gray-700  ">
+											<td className="word-wrap whitespace-wrap px-4 py-2 text-gray-700 ">
 												<div className="flex flex-wrap space-x-2 items-center gap-1">
 													<span className="tag tiny-text bg-primary px-2 rounded-xl ml-2 ">
 														{obra.tamano ||

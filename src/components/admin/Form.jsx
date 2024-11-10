@@ -5,14 +5,15 @@ import FormField from "./FormField";
 import ImageUpload from "./ImageUpload";
 
 const Form = ({ edit, obra = {}, onClose, setSuccessMessage, setErrorMessage }) => {
-    const { state } = useContextGlobal(); // Obtiene las categorías del estado global
+    const { state, dispatch } = useContextGlobal(); // Obtiene las categorías del estado global
     const initialFormData = {
         nombre: "",
         descripcion: "",
         disponibilidad: true,
         tecnicaObra: { nombre: "" },
         artista: { nombre: "" },
-        movimientoArtistico: { nombre: "" },
+        movimientoArtistico: { nombre: "" },  // Inicializa como un objeto vacío con una propiedad nombre
+        imagenes: [],
     };
 
     const [formData, setFormData] = useState(edit ? { ...obra } : initialFormData);
@@ -31,6 +32,14 @@ const Form = ({ edit, obra = {}, onClose, setSuccessMessage, setErrorMessage }) 
         }
     }, [edit, obra]);
 
+    const onFilesAdded = (file) => {
+        console.log("Archivo añadido:", file);
+        setFormData((prevData) => ({
+            ...prevData,
+            imagenes: [...(prevData.imagenes || []), file], // Agregar el archivo al array de imágenes
+        }));
+    };
+    
     const handleChange = (e) => {
         const { name, value } = e.target;
         if (name === "precioRenta") {
@@ -78,22 +87,29 @@ const Form = ({ edit, obra = {}, onClose, setSuccessMessage, setErrorMessage }) 
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+    
         // Verificar si se ha seleccionado o creado una categoría
         const isCategoryValid = formData.movimientoArtistico?.nombre || (isAddingCategory && newCategory.nombre);
-
+    
         if (!isCategoryValid) {
             setErrorMessage("Por favor, seleccione o cree una categoría.");
             return;
         }
-
-        const existingProduct = false;
+    
+        const existingProduct = false;  // Aquí deberías validar si la obra ya existe
         if (existingProduct) {
             setErrorMessage("El nombre del producto ya existe.");
             return;
         }
-
+    
         console.log("Form data:", formData);
+        if (edit) {
+            // Actualiza la obra en el estado global (o en el backend)
+            dispatch({ type: "UPDATE_ART", payload: formData });
+        } else {
+            // Crear nueva obra en el estado global
+            dispatch({ type: "ADD_ART", payload: formData });
+        }
         setSuccessMessage(edit ? "La obra se ha editado correctamente." : "La obra se ha creado correctamente.");
         onClose();
     };
@@ -105,12 +121,19 @@ const Form = ({ edit, obra = {}, onClose, setSuccessMessage, setErrorMessage }) 
     };
 
     const handleCategorySelect = (e) => {
-        if (e.target.value === "agregar") {
-            setIsAddingCategory(true); // Muestra los campos para agregar nueva categoría
-        } else {
-            setIsAddingCategory(false); // Oculta los campos de nueva categoría si se selecciona otra opción
-        }
-    };
+        const { value } = e.target;
+    if (value === "agregar") {
+        setIsAddingCategory(true);
+    } else {
+        setIsAddingCategory(false);
+        setFormData((prevData) => ({
+            ...prevData,
+            movimientoArtistico: {
+                nombre: value || "", // Asegúrate de que el valor esté siempre definido
+            },
+        }));
+    }
+};
 
     const fieldsToRender = edit
         ? Object.keys(obra).filter(
@@ -263,7 +286,8 @@ const Form = ({ edit, obra = {}, onClose, setSuccessMessage, setErrorMessage }) 
             <form onSubmit={handleSubmit}>
                 {renderFields(fieldsToRender)}
                 {renderNestedFields()}
-                <ImageUpload />
+                <ImageUpload onFilesAdded={onFilesAdded} existingImage={obra.imagen} />
+
                 <div className="flex justify-between items-center">
                     <button
                         type="button"
