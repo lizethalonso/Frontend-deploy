@@ -158,7 +158,7 @@ const ProductTable = () => {
 													</span>
 													<span className="tag tiny-text bg-primary px-2 rounded-xl">
 														{priceRangeCalculator(
-															obra.precioRenta
+															obra.precioRenta, state.data
 														)}
 													</span>
 													<span className="tag tiny-text bg-primary px-2 rounded-xl ">

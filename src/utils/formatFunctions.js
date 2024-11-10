@@ -32,8 +32,8 @@ const idCreator = (elementos) => {
 	return maxId + 1;
 };
 
-const priceRangeCalculator = (precioRenta) => {
-	const precios = state.data
+const priceRangeCalculator = (precioRenta, data) => {
+	const precios = data
 		.filter((obra) => obra.precioRenta)
 		.map((obra) => obra.precioRenta);
 
