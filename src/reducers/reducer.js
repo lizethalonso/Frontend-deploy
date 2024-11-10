@@ -143,6 +143,6 @@ export const reducer = (state, action) => {
 			return { ...state, activeSection: action.payload };
 
 		default:
-			throw new Error("Acción no existente");
+			return state;
 	}
 };

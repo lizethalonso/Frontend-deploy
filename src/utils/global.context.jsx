@@ -78,7 +78,7 @@ export const ContextProvider = ({ children }) => {
     }, [state.images]);
 
     return (
-        <ContextGlobal.Provider value={{ state, dispatch, isMobile }}>
+        <ContextGlobal.Provider value={{ state, dispatch, isMobile, loginUser, logoutUser }}>
             {children}
         </ContextGlobal.Provider>
     );
