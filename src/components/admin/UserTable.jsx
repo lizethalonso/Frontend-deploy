@@ -91,7 +91,7 @@ const UserTable = () => {
                 <input
                   type="text"
                   id="nombre"
-                  value={editingItem.name}
+                  value={editingItem.nombre}
                   onChange={(e) => setEditingItem({ ...editingItem, name: e.target.value })}
                   className="w-full p-2 border border-gray-300 rounded"
                 />
@@ -101,7 +101,7 @@ const UserTable = () => {
                 <input
                   type="text"
                   id="apellido"
-                  value={editingItem.lastname}
+                  value={editingItem.apellido}
                   onChange={(e) => setEditingItem({ ...editingItem, lastname: e.target.value })}
                   className="w-full p-2 border border-gray-300 rounded"
                 />
