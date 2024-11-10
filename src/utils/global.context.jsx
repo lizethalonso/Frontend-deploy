@@ -77,6 +77,21 @@ export const ContextProvider = ({ children }) => {
         }
     }, [state.images]);
 
+   // función para gestionar login de usuario
+   const loginUser = (user) => {
+    dispatch({ type: "ADD_USER", payload: user });
+}
+
+// gestionar el cierre de sesión del usuario
+const logoutUser = () => {
+    dispatch({ type: "ADD_USER", payload: null });
+    /* localStorage.removeItem("user"); */
+}
+
+
+
+
+
     return (
         <ContextGlobal.Provider value={{ state, dispatch, isMobile, loginUser, logoutUser }}>
             {children}
