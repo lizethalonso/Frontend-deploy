@@ -3,7 +3,6 @@ import { FaTimes } from "react-icons/fa";
 import { useContextGlobal } from "../../utils/global.context"; // Importa el contexto
 import FormField from "./FormField";
 import ImageUpload from "./ImageUpload";
-import { idCreator } from "../../utils/formatFunctions";
 
 const Form = ({ edit, obra = {}, onClose, setSuccessMessage, setErrorMessage }) => {
     const { state, dispatch } = useContextGlobal(); // Obtiene las categorías del estado global
