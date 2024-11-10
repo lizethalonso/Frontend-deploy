@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { saveToLocalStorage, loadFromLocalStorage } from "../../utils/localStorage";
 
 const ImageUpload = ({ onFilesAdded, existingImage }) => {
-    const [images, setImages] = useState(loadFromLocalStorage("images") || []); // Cargar imágenes desde localStorage
+    const [files, setFiles] = useState({});
+    const [images, setImages] = useState(loadFromLocalStorage("images") || []); // Cargar las imágenes del localStorage
 
     // Función para añadir un archivo y convertirlo a base64
     const addFile = (file) => {

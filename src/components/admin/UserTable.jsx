@@ -7,13 +7,19 @@ import Message from "./Message";
 import { FaTimes } from "react-icons/fa"; // Importar el ícono de cierre
 
 const UserTable = () => {
-  const { state, setState } = useContextGlobal();
+  const { state, dispatch } = useContextGlobal(); // Usamos dispatch del contexto global
   const itemsPerPage = 5;
   const [currentPage, setCurrentPage] = useState(1);
   const [editingItem, setEditingItem] = useState(null);
   const [deletingItem, setDeletingItem] = useState(null);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [newUser, setNewUser] = useState({
+    name: "",
+    lastname: "",
+    email: "",
+    rol: "USER",
+  });
 
   const headers = ["ID", "Nombre", "Apellido", "Correo electrónico", "Rol"];
 
@@ -31,20 +37,34 @@ const UserTable = () => {
   };
 
   const confirmDelete = () => {
-    console.log("Delete", deletingItem);
+    dispatch({ type: "DELETE_USER", payload: { id: deletingItem } });
     setSuccessMessage("El usuario se ha eliminado correctamente");
     setDeletingItem(null);
   };
 
   const handleSaveEdit = (updatedUser) => {
-    setState(prevState => {
-      const updatedUsers = prevState.users.map(user => 
-        user.id === updatedUser.id ? updatedUser : user
-      );
-      return { ...prevState, users: updatedUsers };
-    });
+    dispatch({ type: "UPDATE_USER", payload: updatedUser });
     setSuccessMessage("Usuario actualizado con éxito");
     setEditingItem(null);
+  };
+
+  const handleCreateUser = () => {
+    if (!newUser.name || !newUser.lastname || !newUser.email) {
+      setErrorMessage("Por favor, complete todos los campos.");
+      return;
+    }
+
+    dispatch({ type: "ADD_USER", payload: newUser });
+    setSuccessMessage("Usuario creado con éxito");
+    setNewUser({ name: "", lastname: "", email: "", rol: "USER" });
+  };
+
+  const handleRoleChange = (id, newRole) => {
+    const updatedUser = state.users.find((user) => user.id === id);
+    if (updatedUser) {
+      updatedUser.rol = newRole;
+      dispatch({ type: "UPDATE_USER", payload: updatedUser });
+    }
   };
 
   // Efecto para ocultar los mensajes después de unos segundos
@@ -65,7 +85,6 @@ const UserTable = () => {
         {editingItem ? (
           // Formulario de edición sobre la tabla
           <div className="w-[75vw] h-[70vh] overflow-y-scroll bg-white p-6 rounded-lg shadow-md relative">
-            {/* Botón de cierre */}
             <button
               onClick={() => setEditingItem(null)} // Cerrar el formulario de edición
               className="absolute top-2 right-2 bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center"
@@ -163,18 +182,26 @@ const UserTable = () => {
                       <td className="whitespace-nowrap px-4 py-2 text-gray-700 text-left">{user.lastname || "Apellido no disponible"}</td>
                       <td className="whitespace-nowrap px-4 py-2 text-gray-700 text-left">{user.email || "Correo no disponible"}</td>
                       <td className="whitespace-nowrap px-4 py-2 text-gray-700 text-left">
-                        {user.rol === "ADMIN" ? "Administrador" : user.rol === "COLAB" ? "Colaborador" : "Usuario"}
+                        <select
+                          value={user.rol}
+                          onChange={(e) => handleRoleChange(user.id, e.target.value)}
+                          className="px-2 py-1 rounded border border-gray-300"
+                        >
+                          <option value="ADMIN">Administrador</option>
+                          <option value="COLAB">Colaborador</option>
+                          <option value="USER">Usuario</option>
+                        </select>
                       </td>
                       <td className="whitespace-nowrap px-4 flex gap-2 py-2 text-left">
                         <button
                           onClick={() => handleEdit(user)}
-                          className="text-orange text-lg font-bold p-3 border-orange-600 border-2 rounded hover:bg-orange-600/75 hover:text-white hover:border-orange-400"
+                          className="text-blue-600 text-lg font-bold p-3 border-blue-600 border-2 rounded hover:bg-blue-600/75 hover:text-white hover:border-blue-400"
                         >
                           <CiEdit />
                         </button>
                         <button
                           onClick={() => handleDelete(user.id)}
-                          className="text-red text-lg font-bold p-3 border-red-600 border-2 rounded hover:bg-red-600/75 hover:text-white hover:border-red-400"
+                          className="text-red-600 text-lg font-bold p-3 border-red-600 border-2 rounded hover:bg-red-600/75 hover:text-white hover:border-red-400"
                         >
                           <CiTrash />
                         </button>
@@ -184,37 +211,19 @@ const UserTable = () => {
                 </tbody>
               </table>
             </div>
-            <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={totalPages} />
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={setCurrentPage}
+            />
           </div>
         )}
       </div>
 
-      {/* Mostrar mensajes */}
-      {successMessage && (
-        <div className="fixed bottom-16 right-4 z-50 mb-4">
-          <Message type="success" text={successMessage} onClose={() => setSuccessMessage("")} />
-        </div>
-      )}
-      {errorMessage && (
-        <div className="fixed bottom-4 right-4 z-50 mb-4">
-          <Message type="danger" text={errorMessage} onClose={() => setErrorMessage("")} />
-        </div>
-      )}
+     
 
-      {/* Modal de confirmación de eliminación */}
-      {deletingItem && (
-        <Modal
-          type="delete"
-          text="¿Realmente deseas eliminar este elemento? Esta acción no se puede deshacer."
-          options={{
-            confirmText: "Eliminar",
-            cancelText: "Cancelar",
-          }}
-          isOpen={!!deletingItem}
-          onClose={() => setDeletingItem(null)}
-          onConfirm={confirmDelete}
-        />
-      )}
+      {successMessage && <Message message={successMessage} type="success" />}
+      {errorMessage && <Message message={errorMessage} type="error" />}
     </div>
   );
 };

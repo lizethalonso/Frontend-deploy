@@ -59,26 +59,20 @@ export const reducer = (state, action) => {
 			saveToLocalStorage("categories", filteredCategories);
 			return { ...state, categories: filteredCategories };
 
-		case "ADD_USER":
-			const newUsers = [...state.users, action.payload];
-			saveToLocalStorage("users", newUsers);
-			return { ...state, users: newUsers };
-
-		case "UPDATE_USER":
-			const updatedUsers = state.users.map((item) =>
-				item.id === action.payload.id
-					? { ...item, ...action.payload }
-					: item
-			);
-			saveToLocalStorage("users", updatedUsers);
-			return { ...state, users: updatedUsers };
-
-		case "DELETE_USER":
-			const filteredUsers = state.users.filter(
-				(item) => item.id !== action.payload.id
-			);
-			saveToLocalStorage("users", filteredUsers);
-			return { ...state, users: filteredUsers };
+			case "ADD_USER":
+				return { ...state, users: [...state.users, action.payload] };
+			  case "UPDATE_USER":
+				return {
+				  ...state,
+				  users: state.users.map((user) =>
+					user.id === action.payload.id ? action.payload : user
+				  ),
+				};
+			  case "DELETE_USER":
+				return {
+				  ...state,
+				  users: state.users.filter((user) => user.id !== action.payload.id),
+				};
 
 		case "CHANGE_THEME":
 			return { ...state, theme: action.payload };
