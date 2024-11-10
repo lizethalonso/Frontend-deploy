@@ -39,9 +39,9 @@ export const ContextProvider = ({ children }) => {
         return () => {
             window.removeEventListener("resize", checkIfMobile);
         };
-    }, []); // Solo se ejecuta una vez al montar el componente
+    }, []); 
 
-    const url = data; // Este es el archivo JSON que contiene los datos predeterminados de las obras
+    const url = data; 
     useEffect(() => {
         if (!loadFromLocalStorage("data")) {
             dispatch({ type: "GET_ART", payload: url });

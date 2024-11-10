@@ -1,42 +1,42 @@
 [
       {
         "id": 1,
-        "name": "Elena",
-        "lastname": "Ponce",
+        "nombre": "Elena",
+        "apellido": "Ponce",
         "email": "elena.ponce@example.com",
-        "password": "password123",
+        "contrasenia": "password123",
         "rol": "ADMIN"
       },
       {
         "id": 2,
-        "name": "Juan",
-        "lastname": "Gomez",
+        "nombre": "Juan",
+        "apellido": "Gomez",
         "email": "juan.gomez@example.com",
-        "password": "securePass456",
+        "contrasenia": "securePass456",
         "rol": "USER"
       },
       {
         "id": 3,
-        "name": "Maria",
-        "lastname": "Lopez",
+        "nombre": "Maria",
+        "apellido": "Lopez",
         "email": "maria.lopez@example.com",
-        "password": "pass789",
+        "contrasenia": "pass789",
         "rol": "COLAB"
       },
       {
         "id": 4,
-        "name": "Carlos",
-        "lastname": "Martinez",
+        "nombre": "Carlos",
+        "apellido": "Martinez",
         "email": "carlos.martinez@example.com",
-        "password": "adminPass001",
+        "contrasenia": "adminPass001",
         "rol": "ADMIN"
       },
       {
         "id": 5,
-        "name": "Ana",
-        "lastname": "Fernandez",
+        "nombre": "Ana",
+        "apellido": "Fernandez",
         "email": "ana.fernandez@example.com",
-        "password": "userPass321",
+        "contrasenia": "userPass321",
         "rol": "USER"
       }
     ]

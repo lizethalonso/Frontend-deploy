@@ -3,6 +3,7 @@ import { FaTimes } from "react-icons/fa";
 import { useContextGlobal } from "../../utils/global.context"; // Importa el contexto
 import FormField from "./FormField";
 import ImageUpload from "./ImageUpload";
+import { idCreator } from "../../utils/formatFunctions";
 
 const Form = ({ edit, obra = {}, onClose, setSuccessMessage, setErrorMessage }) => {
     const { state, dispatch } = useContextGlobal(); // Obtiene las categorías del estado global
@@ -13,7 +14,6 @@ const Form = ({ edit, obra = {}, onClose, setSuccessMessage, setErrorMessage }) 
         tecnicaObra: { nombre: "" },
         artista: { nombre: "" },
         movimientoArtistico: { nombre: "" },  // Inicializa como un objeto vacío con una propiedad nombre
-        imagenes: [],
     };
 
     const [formData, setFormData] = useState(edit ? { ...obra } : initialFormData);

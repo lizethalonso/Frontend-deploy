@@ -25,19 +25,20 @@ const Sidebar = () => {
               </span>
             </a>
           </li>
-          <li className="py-2 w-full">
-            <a onClick={() => handleSectionChange("usuarios")}>
-              <span className="text-white text-sm flex items-center gap-4">
-                <ImUsers />
-                <h3 className="hidden sidebar-text">Usuarios</h3>
-              </span>
-            </a>
-          </li>
+          
           <li className="py-2 w-full">
             <a onClick={() => handleSectionChange("categorias")}>
               <span className="text-white text-sm flex items-center gap-4">
                 <MdCategory />
                 <h3 className="hidden sidebar-text">Categorías</h3>
+              </span>
+            </a>
+          </li>
+          <li className="py-2 w-full">
+            <a onClick={() => handleSectionChange("usuarios")}>
+              <span className="text-white text-sm flex items-center gap-4">
+                <ImUsers />
+                <h3 className="hidden sidebar-text">Usuarios</h3>
               </span>
             </a>
           </li>

@@ -6,6 +6,7 @@ import Form from "./Form";
 import Modal from "./Modal";
 import Message from "./Message";
 
+
 const ProductTable = () => {
 	const { state, dispatch } = useContextGlobal(); // Desestructuramos dispatch
 	const itemsPerPage = 5;

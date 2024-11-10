@@ -11,15 +11,10 @@ const UserTable = () => {
   const itemsPerPage = 5;
   const [currentPage, setCurrentPage] = useState(1);
   const [editingItem, setEditingItem] = useState(null);
-  const [deletingItem, setDeletingItem] = useState(null);
+  const [deletingItem, setDeletingItem] = useState(null); // For holding the item to be deleted
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [newUser, setNewUser] = useState({
-    name: "",
-    lastname: "",
-    email: "",
-    rol: "USER",
-  });
+  
 
   const headers = ["ID", "Nombre", "Apellido", "Correo electrónico", "Rol"];
 
@@ -33,13 +28,14 @@ const UserTable = () => {
   };
 
   const handleDelete = (id) => {
-    setDeletingItem(id);
+    setDeletingItem(id); // Store the ID of the user to be deleted
   };
 
   const confirmDelete = () => {
     dispatch({ type: "DELETE_USER", payload: { id: deletingItem } });
     setSuccessMessage("El usuario se ha eliminado correctamente");
     setDeletingItem(null);
+    
   };
 
   const handleSaveEdit = (updatedUser) => {
@@ -48,16 +44,7 @@ const UserTable = () => {
     setEditingItem(null);
   };
 
-  const handleCreateUser = () => {
-    if (!newUser.name || !newUser.lastname || !newUser.email) {
-      setErrorMessage("Por favor, complete todos los campos.");
-      return;
-    }
 
-    dispatch({ type: "ADD_USER", payload: newUser });
-    setSuccessMessage("Usuario creado con éxito");
-    setNewUser({ name: "", lastname: "", email: "", rol: "USER" });
-  };
 
   const handleRoleChange = (id, newRole) => {
     const updatedUser = state.users.find((user) => user.id === id);
@@ -178,8 +165,8 @@ const UserTable = () => {
                   {currentItems.map((user) => (
                     <tr key={user.id}>
                       <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">{user.id}</td>
-                      <td className="whitespace-nowrap px-4 py-2 text-gray-700 text-left">{user.name || "Nombre no disponible"}</td>
-                      <td className="whitespace-nowrap px-4 py-2 text-gray-700 text-left">{user.lastname || "Apellido no disponible"}</td>
+                      <td className="whitespace-nowrap px-4 py-2 text-gray-700 text-left">{user.nombre || "Nombre no disponible"}</td>
+                      <td className="whitespace-nowrap px-4 py-2 text-gray-700 text-left">{user.apellido || "Apellido no disponible"}</td>
                       <td className="whitespace-nowrap px-4 py-2 text-gray-700 text-left">{user.email || "Correo no disponible"}</td>
                       <td className="whitespace-nowrap px-4 py-2 text-gray-700 text-left">
                         <select
@@ -220,12 +207,26 @@ const UserTable = () => {
         )}
       </div>
 
-     
-
       {successMessage && <Message message={successMessage} type="success" />}
       {errorMessage && <Message message={errorMessage} type="error" />}
+
+      {/* Modal de confirmación de eliminación */}
+      {deletingItem && (
+				<Modal
+					type="delete"
+					text="¿Realmente deseas eliminar este usuario? Esta acción no se puede deshacer."
+					options={{
+						confirmText: "Eliminar",
+						cancelText: "Cancelar",
+					}}
+					isOpen={!!deletingItem}
+					onClose={() => setDeletingItem(null)}
+					onConfirm={confirmDelete}
+				/>
+			)}
     </div>
   );
 };
 
 export default UserTable;
+
