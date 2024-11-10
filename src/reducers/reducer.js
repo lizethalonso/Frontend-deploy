@@ -24,18 +24,21 @@ export const reducer = (state, action) => {
 			return { ...state, data: newDataArt };
 
 		case "ADD_CATEGORY":
-			
+			const newCatWithId = {
+				...newCat,
+				id: idCreator(state.categories),
+			};
 
-			const newCategories = [...state.categories, action.payload];
-			saveToLocalStorage("categories", newCategories);
-			return { ...state, categories: newCategories };
+			const newDataCategories = [...state.categories, newCatWithId];
+			saveToLocalStorage("categories", newDataCategories);
+			return { ...state, categories: newDataCategories };
 	
 		case "ADD_USER":
 			const newUserWithId = {
 				...newUser,
 				id: idCreator(state.users),
 			};
-			const newDataUser = [...state.data, newUserWithId];
+			const newDataUser = [...state.users, newUserWithId];
 			console.log("dispatch: ", action.payload);
 			saveToLocalStorage("users", newDataUser);
 			return { ...state, users: newDataUser };

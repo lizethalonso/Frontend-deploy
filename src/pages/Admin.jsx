@@ -23,6 +23,13 @@ const Admin = () => {
 		email: "",
 		rol: "admin",
 	});
+
+	const [newCat, setNewCat] = useState({
+		id: "",
+		nombre: "",
+		descripcion: "",
+		url: "",
+	});
 	const handleAddItem = (itemType) => {
 		setIsCreatingItem(itemType); // Establece el tipo de ítem que se va a crear
 	};
@@ -96,15 +103,9 @@ const Admin = () => {
 			return;
 		}
 
-		// Asignar el ID
-		const newUserWithId = {
-			...newUser,
-			id: idCreator(state.users),
-		};
-
 		// Agregar el nuevo usuario
-        console.log("admin: ",newUserWithId)
-		dispatch({ type: "ADD_USER", payload: newUserWithId });
+        console.log("admin: ",newUser)
+		dispatch({ type: "ADD_USER", payload: newUser });
 		setSuccessMessage("Usuario creado con éxito");
 
 		// Limpiar los campos después de la creación
@@ -113,6 +114,28 @@ const Admin = () => {
 		handleListItems();
 	};
 
+
+	//Categorias
+	const handleInputChangeCat = (e) => {
+		const { name, value } = e.target;
+		setNewCat({
+			...newCat,
+			[name]: value,
+		});
+	};
+	const submitCategory = (e)=>{
+		e.preventDefault(); 
+
+		// Agregar el nuevo usuario
+        console.log("admin: ",newCat)
+		dispatch({ type: "ADD_CATEGORY", payload: newCat });
+		setSuccessMessage("Categoría creada con éxito");
+
+		// Limpiar los campos después de la creación
+		setNewCat({ nombre: "", descripcion: "", url: ""});
+        
+		handleListItems();
+	}
 	return (
 		<>
 			{isMobile ? (
@@ -261,7 +284,7 @@ const Admin = () => {
 										<h2 className="text-xl font-semibold mb-4">
 											Crear nueva categoría
 										</h2>
-										<form>
+										<form onSubmit={submitCategory}>
 											<div className="mb-4">
 												<label
 													className="block text-sm font-semibold mb-2"
@@ -273,6 +296,10 @@ const Admin = () => {
 													type="text"
 													id="nombre"
 													className="w-full p-2 border border-gray-300 rounded"
+													value={newCat.nombre}
+													name="nombre"
+													onChange={handleInputChangeCat}
+													
 												/>
 											</div>
 											<div className="mb-4">
@@ -284,7 +311,10 @@ const Admin = () => {
 												</label>
 												<textarea
 													id="descripcion"
+													name="descripcion"
 													className="w-full p-2 border border-gray-300 rounded"
+													onChange={handleInputChangeCat}
+													
 												/>
 											</div>
 											<div className="mb-4">
@@ -296,8 +326,11 @@ const Admin = () => {
 												</label>
 												<input
 													type="text"
+													name="url"
 													id="imagen"
 													className="w-full p-2 border border-gray-300 rounded"
+													onChange={handleInputChangeCat}
+													
 												/>
 											</div>
 											<div className="flex justify-between">
