@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import Pagination from "./Pagination";
 import Modal from "./Modal";
 import Message from "./Message";
-import { FaTimes } from "react-icons/fa"; // Importar el ícono de cierre
+import { FaTimes } from "react-icons/fa"; 
 
 const CategoryTable = () => {
-  const { state, setState } = useContextGlobal();
+  const { state, dispatch } = useContextGlobal();
   const itemsPerPage = 5;
   const [currentPage, setCurrentPage] = useState(1);
   const [editingItem, setEditingItem] = useState(null);
@@ -30,32 +30,27 @@ const CategoryTable = () => {
   };
 
   const confirmDelete = () => {
-    console.log("Delete", deletingItem);
+    dispatch({ type: "DELETE_CATEGORY", payload: { id: deletingItem } });
     setSuccessMessage("La categoría se ha eliminado correctamente");
     setDeletingItem(null);
   };
 
   const handleSaveEdit = (updatedCategory) => {
-    // Actualizar categoría en el estado global
-    setState(prevState => {
-      const updatedCategories = prevState.categories.map(categoria => 
-        categoria.id === updatedCategory.id ? updatedCategory : categoria
-      );
-      return { ...prevState, categories: updatedCategories };
-    });
+    console.log("admin: ", updatedCategory)
+    dispatch({ type: "UPDATE_CATEGORY", payload: updatedCategory });
     setSuccessMessage("Categoría actualizada con éxito");
     setEditingItem(null);
   };
 
-  // Efecto para ocultar los mensajes después de unos segundos
+ 
   useEffect(() => {
     if (successMessage || errorMessage) {
       const timer = setTimeout(() => {
-        setSuccessMessage(""); // Ocultar el mensaje de éxito
-        setErrorMessage(""); // Ocultar el mensaje de error
-      }, 3000); // Duración del mensaje en milisegundos
+        setSuccessMessage(""); 
+        setErrorMessage(""); 
+      }, 3000); 
 
-      return () => clearTimeout(timer); // Limpiar el temporizador al desmontar
+      return () => clearTimeout(timer); 
     }
   }, [successMessage, errorMessage]);
 
